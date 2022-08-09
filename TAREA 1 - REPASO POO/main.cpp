@@ -6,8 +6,8 @@
 
 #include <iostream>
 #include <string>
-#include "board.h"
-#include "dice.h"
+#include "Board.h"
+#include "Dice.h"
 
 using namespace std;
 

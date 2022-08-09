@@ -8,9 +8,10 @@
 using namespace std;
 #include <string>
 #include <vector>
-#include "box.h"
-#include "dice.h"
+#include "Box.h"
+#include "Dice.h"
 
+#pragma once
 const int NUMBER_OF_CELLS = 30;
 
 class Board{
