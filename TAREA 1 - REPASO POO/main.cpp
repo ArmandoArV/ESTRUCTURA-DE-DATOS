@@ -13,10 +13,6 @@ using namespace std;
 
 Board board;
 
-int numberOfsnakes = 3;
-int numberOfladders = 3;
-int numberOfCells = 30;
-
 void ContinueOrExit(char &option){
     cout << "Press C to continue" << endl;
     cout << "Press E to exit" << endl;
@@ -35,11 +31,6 @@ void ContinueOrExit(char &option){
 int main()
 {
     char option;
-    ContinueOrExit(option);
-    board.set_num_snakes(numberOfsnakes);
-    board.set_num_ladders(numberOfladders);
-    board.set_num_cells(numberOfCells);
-    board.print_board();
 
     return 0;
 }
