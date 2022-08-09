@@ -5,7 +5,7 @@
 */
 
 #include <iostream>
-#include "Dice.h"
+#include "dice.h"
 
 Dice::Dice(int number_of_faces, int number)
 {
