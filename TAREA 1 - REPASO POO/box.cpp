@@ -5,7 +5,7 @@
 */
 
 #include <iostream>
-#include "box.h"
+#include "Box.h"
 
 Box::Box(int position, int value, char is_snake, char is_ladder){
     this->position = position;

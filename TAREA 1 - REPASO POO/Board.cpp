@@ -5,7 +5,7 @@
 */
 
 #include <iostream>
-#include "board.h"
+#include "Board.h"
 
 Board::Board(int num_snakes, int num_ladders, int num_cells)
 {
