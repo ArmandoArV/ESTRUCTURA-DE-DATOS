@@ -4,6 +4,9 @@
         - Armando Arredondo Valle
 */
 
+const int NUMBER_OF_FACES = 6;
+
+
 class Dice{
     private:
         int number_of_faces;
