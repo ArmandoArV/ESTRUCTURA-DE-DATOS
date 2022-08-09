@@ -31,12 +31,6 @@ void ContinueOrExit(char &option){
     }
 }
 
-void requireNumberOfPlayers(int &num_players){
-    cout << "Please enter the number of players: " << endl;
-    cin >> num_players;
-    board.set_num_players(num_players);
-}
-
 
 int main()
 {
