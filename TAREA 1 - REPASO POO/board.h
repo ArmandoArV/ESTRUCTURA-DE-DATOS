@@ -1,6 +1,6 @@
 /*
     Made by: 
-        - Diego Efraín Antonio Pérez 
+        - Antonio Noguerón Bárcenas
         - Armando Arredondo Valle
 */
 
