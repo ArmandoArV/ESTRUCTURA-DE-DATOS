@@ -1,3 +1,9 @@
+/*
+    Made by: 
+        - Antonio Noguerón Bárcenas
+        - Armando Arredondo Valle
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;

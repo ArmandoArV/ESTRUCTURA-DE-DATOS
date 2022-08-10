@@ -57,3 +57,4 @@ void Box::check_box(){
         this->value = -this->value;
     }
 }
+
