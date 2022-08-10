@@ -5,77 +5,32 @@
 */
 
 #include <iostream>
-#include "player.h"
+#include "Player.h"
 
-
-Player::Player(int position, int points, int num_dice){
-    this->position = position;
-    this->points = points;
-    this->num_dice = num_dice;
+Player::Player(){
+	playerNumber = 0;
+	position = 1;
+}
+Player::Player(int playerNum, int pos){
+	playerNumber = playerNum;
+	position = pos;
 }
 
 Player::~Player(){
-    //dtor
 }
 
-int Player::get_position(){
-    return this->position;
+int Player::getPlayerNumber(){
+	return playerNumber;
 }
 
-int Player::get_points(){
-    return this->points;
+int Player::getPosition(){
+	return position;
 }
 
-int Player::get_num_dice(){
-    return this->num_dice;
+void Player::setPlayerNumber(int playerNumber_){
+	playerNumber = playerNumber_;
 }
 
-Dice *Player::get_dice(){
-    return this->dice;
-}
-
-// Setters
-void Player::set_position(int position){
-    this->position = position;
-}
-
-void Player::set_points(int points){
-    this->points = points;
-}
-
-void Player::set_num_dice(int num_dice){
-    this->num_dice = num_dice;
-}
-
-void Player::set_dice(Dice *dice){
-    this->dice = dice;
-}
-
-void Player::move_player(){
-    this->position += this->dice->roll();
-}
-
-void Player::check_dice(){
-    if(this->dice->get_number_of_faces() == 0){
-        std::cout << "The dice has no faces" << std::endl;
-    }
-}
-
-void Player::check_box(){
-    if(this->position > 100){
-        this->position = this->position - 100;
-        this->points += 100;
-    }
-}
-
-void Player::check_position(){
-    if(this->position > 100){
-        this->position = this->position - 100;
-    }
-}   
-
-void Player::check_num_dice(){
-    if(this->num_dice == 0){
-        std::cout << "The player has no dice" << std::endl;
-    }
+void Player::setPosition(int position_){
+	position = position_;
 }

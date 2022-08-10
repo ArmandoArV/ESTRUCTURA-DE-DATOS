@@ -4,20 +4,19 @@
         - Armando Arredondo Valle
 */
 
-
 using namespace std;
 #include <string>
 #include <vector>
-#include "Box.h"
+#include "Tile.h"
 #include "Dice.h"
 
+const int NUMBER_OF_TILES = 30;
 #pragma once
-const int NUMBER_OF_CELLS = 30;
 
 class Board{
     private:
-        Box box [NUMBER_OF_CELLS];
-        Dice dice;
+        Tile Tile [NUMBER_OF_TILES];
+        Dice dice();
         int num_snakes;
         int num_ladders;
         int num_cells;
@@ -38,5 +37,5 @@ class Board{
         void set_current_position(int current_position);
         // Methods
         void print_board();
-        void check_box();
+        void check_Tile();
 };

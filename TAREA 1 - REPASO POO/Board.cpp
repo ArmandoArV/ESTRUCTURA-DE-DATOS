@@ -57,3 +57,6 @@ void Board::set_current_position(int current_position){
     this->current_position = current_position;
 }
 
+void Board::print_board(){
+    cout << "Printing Board...";
+}

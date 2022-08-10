@@ -4,8 +4,8 @@
         - Armando Arredondo Valle
 */
 
-#pragma once
 const int NUMBER_OF_FACES = 6;
+#pragma once
 
 class Dice{
     private:

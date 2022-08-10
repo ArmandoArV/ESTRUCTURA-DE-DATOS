@@ -6,11 +6,15 @@
 
 #include <iostream>
 #include "Dice.h"
+Dice::Dice(){
+    number_of_faces = 6;
+    number = 1;
+}
 
-Dice::Dice(int number_of_faces, int number)
+Dice::Dice(int face_num, int num)
 {
-    this->number_of_faces = number_of_faces;
-    this->number = number;
+    number_of_faces = face_num;
+    number = num;
 }
 
 Dice::~Dice()
@@ -19,26 +23,26 @@ Dice::~Dice()
 
 int Dice::get_number_of_faces()
 {
-    return this->number_of_faces;
+    return number_of_faces;
 }
 
 int Dice::get_number()
 {
-    return this->number;
+    return number;
 }
 
-void Dice::set_number_of_faces(int number_of_faces)
+void Dice::set_number_of_faces(int number_of_faces_)
 {
-    this->number_of_faces = number_of_faces;
+    number_of_faces = number_of_faces_;
 }
 
-void Dice::set_number(int number)
+void Dice::set_number(int num)
 {
-    this->number = number;
+    number = num;
 }
 
 int Dice::roll()
 {
-    this->number = rand() % this->number_of_faces + 1;
-    return this->number;
+    number = rand() % number_of_faces + 1;
+    return number;
 }

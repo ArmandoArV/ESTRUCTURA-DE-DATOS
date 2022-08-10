@@ -1,5 +1,5 @@
 /*
-    Made by: 
+    Made by:
         - Antonio Noguerón Bárcenas
         - Armando Arredondo Valle
 */
@@ -8,12 +8,13 @@
 #include <string>
 #include "Board.h"
 #include "Dice.h"
-#include "Player.h"
-#include "Box.h"
 
 using namespace std;
 
-Board board;
+const int NUMBER_OF_SNAKES = 3;
+const int NUMBER_OF_LADDERS = 3;
+
+Board board(NUMBER_OF_SNAKES,NUMBER_OF_LADDERS,NUMBER_OF_TILES);
 
 void ContinueOrExit(char &option){
     cout << "Press C to continue" << endl;
@@ -29,13 +30,10 @@ void ContinueOrExit(char &option){
     }
 }
 
-
 int main()
 {
     char option;
-    Board board1 = Board(5,5,30);
-    Dice dice = Dice(6);
-
-
+    ContinueOrExit(option);
+    board.print_board();
     return 0;
 }
