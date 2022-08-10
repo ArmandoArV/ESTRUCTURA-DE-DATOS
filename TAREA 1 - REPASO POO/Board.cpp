@@ -49,8 +49,19 @@ void Board::print_board() {
         }
       }
     }
-    // it will print the board
-    cout << this->Tile[i].get_status() << " ";
-  }
+    // it will print the board 6x5 (6 rows and 5 columns)
+    if (i % 6 == 0) {
+      cout << endl;
+    }
+    // there can't be more than one snake or ladder in a row if there is more than one snake or ladder in the row change it to letter N
+    if (this->Tile[i].get_status() == 'S' && this->Tile[i + 1].get_status() == 'S') {
+      this->Tile[i].set_status('N');
+    }
+    if (this->Tile[i].get_status() == 'L' && this->Tile[i + 1].get_status() == 'L') {
+      this->Tile[i].set_status('N');
+    }
+    // print the board
 
+    cout << this->Tile[i].get_status();
+  }
 }

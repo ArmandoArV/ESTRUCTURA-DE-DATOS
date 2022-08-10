@@ -12,6 +12,7 @@
 
 using namespace std;
 
+
 Board board(NUMBER_OF_SNAKES, NUMBER_OF_LADDERS, NUMBER_OF_TILES);
 
 int main(){

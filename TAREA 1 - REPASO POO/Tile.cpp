@@ -28,6 +28,10 @@ char Tile::get_status(){
     return status;
 }
 
+int Tile::get_number(){
+    return number;
+}
+
 void Tile::set_id(int id_){
     id = id_;
 }
@@ -36,3 +40,6 @@ void Tile::set_status(char value){
     status= value;
 }
 
+void Tile::set_number(int num){
+    number = num;
+}

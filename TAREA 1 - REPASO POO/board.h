@@ -10,11 +10,10 @@ using namespace std;
 #include <string>
 #include <vector>
 
-const int NUMBER_OF_TILES = 31;
+#pragma once
+const int NUMBER_OF_TILES = 30;
 const int NUMBER_OF_SNAKES = 3;
 const int NUMBER_OF_LADDERS = 3;
-
-#pragma once
 
 class Board {
 private:

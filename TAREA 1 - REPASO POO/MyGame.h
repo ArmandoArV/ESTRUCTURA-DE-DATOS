@@ -6,8 +6,15 @@ class MyGame
         char option;
     public:
         MyGame();
-        MyGame(int,int);
+        MyGame(int,int,char);
         ~MyGame();
+        int getMaxTurns();
+        int getNumberOfPlayers();
+        char getOption();
+        void setMaxTurns(int);
+        void setNumberOfPlayers(int);
+        void setOption(char);
+        
         void startGame();
         void endGame(int);
 };
