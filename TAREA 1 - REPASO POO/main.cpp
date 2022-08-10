@@ -8,6 +8,8 @@
 #include <string>
 #include "Board.h"
 #include "Dice.h"
+#include "Player.h"
+#include "Box.h"
 
 using namespace std;
 
@@ -31,6 +33,9 @@ void ContinueOrExit(char &option){
 int main()
 {
     char option;
+    Board board1 = Board(5,5,30);
+    Dice dice = Dice(6);
+
 
     return 0;
 }
