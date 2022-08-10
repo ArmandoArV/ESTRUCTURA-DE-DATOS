@@ -11,6 +11,9 @@ using namespace std;
 #include "Dice.h"
 
 const int NUMBER_OF_TILES = 30;
+const int NUMBER_OF_SNAKES = 3;
+const int NUMBER_OF_LADDERS = 3;
+
 #pragma once
 
 class Board{

@@ -6,13 +6,20 @@
 
 #include <iostream>
 #include "Board.h"
-
+#include "Dice.h"
+#include "Tile.h"
 Board::Board(int num_snakes, int num_ladders, int num_cells)
 {
     this->num_snakes = num_snakes;
     this->num_ladders = num_ladders;
     this->num_cells = num_cells;
-    this->current_position = 0;
+}
+
+Board::Board()
+{
+    this->num_snakes = 0;
+    this->num_ladders = 0;
+    this->num_cells = 0;
 }
 
 Board::~Board()
@@ -58,5 +65,17 @@ void Board::set_current_position(int current_position){
 }
 
 void Board::print_board(){
-    cout << "Printing Board...";
+    // here should be the print of the board if it isn't a snake or a ladder letter N will appear else the letter of the snake or the ladder
+    std::cout << "Board: " << std::endl;
+    for(int i = 0; i < this->num_cells; i++){
+        if(i == this->current_position){
+            cout << "N ";
+        }
+        else{
+            
+            cout << "O ";
+        }
+    }
+    
+
 }
