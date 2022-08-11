@@ -8,38 +8,21 @@
 #include "Tile.h"
 
 Tile::Tile(){
-    id = 0;
-    status = 'N';
+    type= 'N';
 }
 
-Tile::Tile(int id_, char status_){
-    id = id_;
-		status = status_;
+Tile::Tile(char type_){
+		type = type_;
 }
 
 Tile::~Tile(){
 }
 
-int Tile::get_id(){
-    return id;
+char Tile::get_type(){
+    return type;
 }
 
-char Tile::get_status(){
-    return status;
+void Tile::set_type(char value){
+    type= value;
 }
 
-int Tile::get_number(){
-    return number;
-}
-
-void Tile::set_id(int id_){
-    id = id_;
-}
-
-void Tile::set_status(char value){
-    status= value;
-}
-
-void Tile::set_number(int num){
-    number = num;
-}

@@ -1,37 +1,52 @@
-#include "MyGame.h"
-#include "Board.cpp"
+/*
+    Made by: 
+        - Antonio Noguerón Bárcenas
+        - Armando Arredondo Valle
+*/
+
 #include <iostream>
+#include "MyGame.h"
+#include "validation.cpp"
 using namespace std;
 
-MyGame::MyGame(int MaxTurns, int numberOfPlayers, char option) {
-    this->MaxTurns = MaxTurns;
-    this->numberOfPlayers = numberOfPlayers;
-    this->option = ' ';
+int MAX_TURNS = 5;
+int N_OF_PLAYERS = 2;
+int END_CASE = 0;
+
+MyGame::MyGame(){
+	maxTurn = 15;
+	numberOfPlayers = 2;
+	endCase = 5;
 }
 
-MyGame::~MyGame() {
-    //dtor
+MyGame::MyGame(int maxTurn, int numberOfPlayers, int endCase){
+	this->maxTurn = maxTurn;
+	this->numberOfPlayers = numberOfPlayers;
+	this->endCase = 5;
 }
 
-int MyGame::getMaxTurns() {return MaxTurns;}
+MyGame::~MyGame(){
+	//dtor
+}
 
-int MyGame::getNumberOfPlayers() {return numberOfPlayers;}
+void MyGame::start(){
+	// here should require the number of players
+	// and the number of turns
+	cout << "Welcome to the game" << endl;
+	cout << "Please enter the number of players: ";
+	cin >> numberOfPlayers;
+	cout << "Please enter the number of turns: ";
+	cin >> maxTurn;
+	Board board(NUMBER_OF_SNAKES, NUMBER_OF_LADDERS, NUMBER_OF_TILES);
+	for (int i = 0; i < NUMBER_OF_TILES; ++i) {
+    // here should order it into a matrix of 6 columns and 5 rows
+    // and print it
+    cout << board.check_Tile(i) << " ";
+    // it will create 6 rows and 2 columns
+    // and print it
+    if (i % 6 == 5) {
+      cout << endl;
+    }
 
-char MyGame::getOption() {return option;}
-
-void MyGame::setMaxTurns(int MaxTurns) {this->MaxTurns = MaxTurns;}
-
-void MyGame::setNumberOfPlayers(int numberOfPlayers) {this->numberOfPlayers = numberOfPlayers;}
-
-void MyGame::setOption(char option) {this->option = option;}
-
-void MyGame::startGame() {
-    Board board;
-    cout << "Welcome to the game" << endl;
-    cout << "Max turns: " << MaxTurns << endl;
-    cout << "Number of players: " << numberOfPlayers << endl;
-    cin >> MaxTurns;
-    cin >> numberOfPlayers;
-    // here should print the board
-    board.print_board();
+	}
 }

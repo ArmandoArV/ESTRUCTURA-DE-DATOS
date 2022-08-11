@@ -1,20 +1,25 @@
-class MyGame
-{
-    private:
-        int MaxTurns;
-        int numberOfPlayers;
-        char option;
-    public:
-        MyGame();
-        MyGame(int,int,char);
-        ~MyGame();
-        int getMaxTurns();
-        int getNumberOfPlayers();
-        char getOption();
-        void setMaxTurns(int);
-        void setNumberOfPlayers(int);
-        void setOption(char);
-        
-        void startGame();
-        void endGame(int);
+/*
+    Made by:
+        - Antonio Noguerón Bárcenas
+        - Armando Arredondo Valle
+*/
+#include "Board.h"
+#include "Dice.h"
+#include "Tile.h"
+using namespace std;
+
+#pragma once
+class MyGame {
+	private:
+		int maxTurn;
+		int numberOfPlayers;
+		int endCase;
+		//Aqui se puede poner el continue or exit
+		// y podemos empezar la logica de correr el
+		// desde MyGame 
+	public:
+		MyGame();
+		MyGame(int, int,int);
+		~MyGame();
+		void start();
 };

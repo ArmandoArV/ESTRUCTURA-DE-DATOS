@@ -1,26 +1,18 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 #pragma once
-
-
 class Tile
 {
     private:
-        int id;
-        char status;
-        char value;
-        int number;
+        char type;
     public:
         Tile();
-        Tile(int id, char status);
+        Tile(char type);
         ~Tile();
-        // Getters
-        int get_id();
-        char get_status();
-        int get_number();
+        // Getters        
+        char get_type();
         // Setters
-        void set_id(int id);
-        void set_status(char status);
-        void set_number(int number);
+        void set_type(char type);
 };
