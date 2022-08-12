@@ -39,14 +39,6 @@ void MyGame::start(){
 	cin >> maxTurn;
 	Board board(NUMBER_OF_SNAKES, NUMBER_OF_LADDERS, NUMBER_OF_TILES);
 	for (int i = 0; i < NUMBER_OF_TILES; ++i) {
-    // here should order it into a matrix of 6 columns and 5 rows
-    // and print it
-    cout << board.check_Tile(i) << " ";
-    // it will create 6 rows and 2 columns
-    // and print it
-    if (i % 6 == 5) {
-      cout << endl;
-    }
-
-	}
+    	cout << board.check_Tile(i) << " ";
+	}	
 }

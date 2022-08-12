@@ -12,7 +12,7 @@ Tile::Tile(){
 }
 
 Tile::Tile(char type_){
-		type = type_;
+	type = type_;
 }
 
 Tile::~Tile(){
@@ -23,6 +23,6 @@ char Tile::get_type(){
 }
 
 void Tile::set_type(char value){
-    type= value;
+    type = value;
 }
 
