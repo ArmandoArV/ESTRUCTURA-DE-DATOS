@@ -34,7 +34,7 @@ void ContinueOrExit(char &option) {
     cout << "Invalid option" << endl;
     ContinueOrExit(option);
   }
-  if (option == 'E  ' || option == 'e') {
+  if (option == 'E' || option == 'e') {
     cout << "Thanks for playing!!!" << endl;
     exit(0);
   }

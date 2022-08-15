@@ -55,7 +55,6 @@ void Board::create_board(){
 	int tempNum = 0;
 	while (tempNum < num_ladders) {
 		int r = getRandomsToCreateBoard();
-		cout<<r<<endl;
 		if (Tiles[r].get_type() == 'N') {
 			Tiles[r].set_type('L');
 			tempNum++;
@@ -64,7 +63,6 @@ void Board::create_board(){
 	tempNum = 0;
 	while (tempNum < num_snakes) {
 		int r = getRandomsToCreateBoard();
-		cout<<r<<endl;
 		if (Tiles[r].get_type() == 'N') {
 			Tiles[r].set_type('S');
 			tempNum++;
