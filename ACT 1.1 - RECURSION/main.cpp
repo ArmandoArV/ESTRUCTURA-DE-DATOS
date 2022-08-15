@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
+#include "Fraction.cpp"
 using namespace std;
 
 // iterative sum
 
-
+Fraction fraction1;
 
 void sumaIterativa(int n) {
     // here will calculate the sum from 1 to an n range number
@@ -58,15 +59,6 @@ void euclidesRecursive(int n,int n2,int resudus){
     }
 }
 
-void fractionSimplificationIterative(int numerador,int denominador){
-   for (int i = 2; i <= numerador; i++) {
-        if(numerador%i==0 && denominador%i==0){
-            numerador = numerador / i;
-            denominador = denominador / i;
-        }
-    }
-    cout << numerador << "/" << denominador << "\n";
-}
 
 
 
@@ -84,6 +76,8 @@ int main(){
     cin >> n2;
     euclidesIterative(n,n2);
     euclidesRecursive(n,n2,1);
-    fractionSimplificationIterative(n,n2);
+    fraction1 =  Fraction(n,n2);
+    fraction1.reduce(n,n2);
+    fraction1.recursive_reduce(n,n2);
     return 0;
 }
