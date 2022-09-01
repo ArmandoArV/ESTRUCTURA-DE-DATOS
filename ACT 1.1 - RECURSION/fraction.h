@@ -1,3 +1,8 @@
+/*
+    Made by:
+        - Armando Arredondo Valle
+        - Antonio Noguerón Bárcenas
+*/
 class Fraction {
     private:
         int numerator;

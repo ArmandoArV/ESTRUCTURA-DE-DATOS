@@ -1,3 +1,9 @@
+/*
+    Made by:
+        - Armando Arredondo Valle
+        - Antonio Noguerón Bárcenas     
+
+*/
 #include <iostream>
 #include <string>
 #include "Fraction.cpp"
@@ -13,7 +19,7 @@ void sumaIterativa(int n) {
     for (int i = 0; i <= n; i++) {
         sum += i;
     }
-    cout << "The sum of 1 to " << n << " is: " << sum << endl;
+    cout << "The sum of 1 to " << n << " is: " << sum << "\n";
     
 }
 
@@ -26,14 +32,14 @@ void sumaRecursiva(int n,int contador, int suma){
     }
     else
     {
-        cout << "The sum of 1 to " << n << " is: " << suma << endl;
+        cout << "The sum of 1 to " << n << " is: " << suma << "\n";
     }
 }
 
 void sumaDirecta(int n,int suma){
     suma = n*(n+1)/2;
-    cout << "The sum of 1 to " << n << " is: " << suma << endl;
-}
+    cout << "The sum of 1 to " << n << " is: " << suma << "\n";
+}   
 
 void euclidesIterative(int n,int n2){ // minumum common divisor
     int resudus = 1;
@@ -58,9 +64,6 @@ void euclidesRecursive(int n,int n2,int resudus){
         euclidesRecursive(n,n2,resudus);
     }
 }
-
-
-
 
 int main(){
     int n;

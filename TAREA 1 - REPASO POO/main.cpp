@@ -27,15 +27,15 @@ MyGame game(MAX_TURNS, N_OF_PLAYERS, END_CASE);
 */
 //Puede ir en mygame o en validation y llamarlo en Mygame
 void ContinueOrExit(char &option) {
-  cout << "Press C to continue" << endl;
-  cout << "Press E to exit" << endl;
+  cout << "Press C to continue" << "\n";
+  cout << "Press E to exit" << "\n";
   cin >> option;
   if (option != 'C' && option != 'c' && option != 'E' && option != 'e') {
-    cout << "Invalid option" << endl;
+    cout << "Invalid option" << "\n";
     ContinueOrExit(option);
   }
   if (option == 'E' || option == 'e') {
-    cout << "Thanks for playing!!!" << endl;
+    cout << "Thanks for playing!!!" << "\n";
     exit(0);
   }
 }

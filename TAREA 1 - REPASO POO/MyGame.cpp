@@ -32,7 +32,7 @@ MyGame::~MyGame(){
 void MyGame::start(){
 	// here should require the number of players
 	// and the number of turns
-	cout << "Welcome to the game" << endl;
+	cout << "Welcome to the game" << "\n";
 	cout << "Please enter the number of players: ";
 	cin >> numberOfPlayers;
 	cout << "Please enter the number of turns: ";

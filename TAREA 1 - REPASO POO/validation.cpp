@@ -9,7 +9,7 @@ using namespace std;
 
 int validation(int input,int lower,int top){
 while (!(cin >> input) || input>top || input<lower) {
-    cout << "Invalid input. Please try again." << endl;
+    cout << "Invalid input. Please try again." << "\n";
     cin.clear(); 
 		cin.ignore(123, '\n'); 
   }
@@ -18,7 +18,7 @@ while (!(cin >> input) || input>top || input<lower) {
 
 double validationDouble(double input,double lower,double top){
   while (!(cin >> input) || input>top || input<lower) {
-    cout << "Invalid input. Please try again." << endl;
+    cout << "Invalid input. Please try again." << "\n";
     cin.clear();
 		cin.ignore(123, '\n');
   }
