@@ -64,7 +64,7 @@ int main(){
     //quickSortName(alumnos, 0, alumnos.size()-1);
     cout << "Bubble sort:" << "\n";
     cout << "----------------" << "\n";
-    bubbleSortName(alumnos);
+    bubbleSortName(alumnos);    
     for(int i = 0; i < alumnos.size(); i++){
         cout << alumnos[i].getNombre() << endl;
     }
