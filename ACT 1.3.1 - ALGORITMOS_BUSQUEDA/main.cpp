@@ -7,76 +7,46 @@
 //
 
 #include <iostream>
+#include "searcher.cpp"
 using namespace std;
 
-// Brute force string matching algorithm
-
-void search_all(string const& text, string const& pattern) {
-    unsigned long const pattern_size(pattern.size()); // pattern size
-    unsigned long const endpos(text.size() - pattern_size + 1); // end position
-    short evaluation; // evaluation of the comparison
-    int total_comparisions = 0;
-    for (int POs(0); POs < endpos; ++POs) { // for each position
-        evaluation = text.compare(POs, pattern_size, pattern); // compare
-        total_comparisions++;
-        if (evaluation == -1) { // if the pattern is less than the text
-            cout << POs << " |" << text.substr(POs,pattern_size) << "| " << evaluation << "  "; // print the position, the text and the evaluation
-        } else { // if the pattern is greater than the text
-            cout << POs << " |" << text.substr(POs,pattern_size) << "|  " << evaluation << "  "; // print the position, the text and the evaluation
-        } // end if
-        if (evaluation == 0) { // if the pattern is equal to the text
-            cout << " <---- match! " << "\n"; // print the match
-        } else { // if the pattern is not equal to the text
-            cout << "\n"; // print a new line
+int main()
+{
+    int option = 0;
+    // Menu
+    Searcher searcher1("panamanian banana fanatics can manage anacondas", "ana");
+    do
+    {
+        cout << "----------------------------------------\n";
+        cout << "      ACT 1.3.1 - ALGORITMOS_BUSQUEDA\n";
+        cout << "----------------------------------------\n";
+        cout << "[1] Search all\n";
+        cout << "[2] Compare demo\n";
+        cout << "[3] Iter demo\n";
+        cout << "[5] Morris Pratt\n";
+        cout << "[0] Exit\n";
+        cout << "----------------------------------------\n";
+        cout << "Option: ";
+        cin >> option;
+        switch (option)
+        {
+        case 1:
+            searcher1.search_all();
+            break;
+        case 2:
+            searcher1.compare_demo();
+            break;
+        case 3:
+            searcher1.iter_demo();
+            break;
+        case 4:
+            break;
+        case 5:
+            searcher1.knuth_morris_pratt();
+            break;
+        default:
+            cout << "Invalid option!";
+            break;
         }
-    }
-    cout << "Total comparisions: " << total_comparisions << "\n"; // print the total comparisions
-    cout << "Total chars compared: " << total_comparisions * pattern_size << "\n"; // print the total chars compared
+    } while (option != 0);
 }
-
-void iter_demo(string const& text, string const& pattern) { 
-    cout << "------------------\n";
-    cout << "Text: " << text << "\n";
-    cout << "Pattern: " << pattern << "\n";
-    cout << "Position | Substring | Evaluation | Match? " << "\n";
-    search_all(text, pattern);
-}
-
-void iter_demo_bienhecho(string const& text, string const& pattern) { // iter_demo_bienhecho
-    int char_compared = 0; // chars compared
-    unsigned long const pattern_size(pattern.size()); // pattern size
-    unsigned long const endpos(text.size() - pattern_size + 1); // end position
-    bool match;
-    for (int i=0; i < endpos; ++i){ // for each index in the text
-        string substring = text.substr(i, pattern_size);
-        for(int j=0; j< pattern_size; ++j){ // for each char in the pattern
-            if(substring[j] == pattern[j]){ // if the char is equal to the pattern
-                char_compared++; // add 1 to the chars compared
-            } else { // if the char is not equal to the pattern
-                char_compared++; // add 1 to the chars compared
-                match = false;
-                break; // break the loop
-            }
-            match = true; 
-        }
-        if (match) {
-        cout << i << " |" << substring << "|  " << "1" << "  <---- match!" << "\n";
-
-        } else {
-        cout << i << " |" << substring << "|  " << "0 " << "\n";
-        }
-    }
-    cout << "Total comparisions: " << endpos << "\n"; // print the total comparisions
-    cout << "Total chars compared: " << char_compared << "\n"; // print the total chars compared
-}
-
-
-
-int main() {
-    string the_text = "panamanian banana fanatics can manage anacondas";
-    string the_pattern = "ana";
-    search_all(the_text, the_pattern);
-    iter_demo_bienhecho(the_text, the_pattern);
-    return 0;
-}
-    
