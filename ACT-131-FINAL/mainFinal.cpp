@@ -256,28 +256,28 @@ void knuth_morris_pratt(string const& text, string const& pattern)
     {
         if (text[i] == pattern[j]) // if the char is equal to the pattern
         {
-            chars_compared++; // add 1 to the chars compared
-            i++; // add 1 to i
-            j++; // add 1 to j
+            chars_compared++; 
+            i++;
+            j++; 
         }
         if (j == pattern_size) // if j is equal to the pattern size
         {
             cout << "Match at: " << i - j << "\n";
-            j = MPTable[j - 1]; // set j to the index of the table
-            chars_compared++; // add 1 to the chars compared
+            j = MPTable[j - 1]; // moves J to the index of the previous letter
+            chars_compared++; 
         }
         else if (i < endpos && text[i] != pattern[j]) // if i is less than the end position and the char is not equal to the pattern
         {
-            chars_compared++; // add 1 to the chars compared
-            if (j != 0) // if j is not equal to 0
+            chars_compared++; 
+            if (j != 0) 
             {
-                j = MPTable[j - 1]; // set j to the index of the table
-                chars_compared++; // add 1 to the chars compared
+                j = MPTable[j - 1]; // moves J to the index of the previous letter
+                chars_compared++; 
             }
             else // if j is equal to 0
             {
-                i++; // add 1 to i
-                chars_compared++; // add 1 to the chars compared
+                i++; 
+                chars_compared++;
             }
         }
     }
@@ -345,8 +345,11 @@ int main() {
                 knuth_morris_pratt(the_text,the_pattern);
                 break;
             case 7:
+                cout << "sequence 1: " << sequence1 << "\n";
                 knuth_morris_pratt(readData(),sequence1);
+                cout << "sequence 2: " << sequence2 << "\n";
                 knuth_morris_pratt(readData(),sequence2);
+                cout << "sequence 3: " << sequence3 << "\n";
                 knuth_morris_pratt(readData(),sequence3);
                 break;
         }
