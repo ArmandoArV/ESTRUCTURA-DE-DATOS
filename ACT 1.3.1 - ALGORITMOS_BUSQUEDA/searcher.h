@@ -20,6 +20,7 @@ public:
     void iter_demo();
     void smarter_search();
     void knuth_morris_pratt();
+    void morris_pratt();
     // Structs
     struct PrefixResult {
         int prefix_length;
