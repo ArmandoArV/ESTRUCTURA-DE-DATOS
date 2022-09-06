@@ -1,6 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include <string>
+#include <vector>
 using namespace std;
 class Searcher
 {
@@ -19,4 +20,17 @@ public:
     void iter_demo();
     void smarter_search();
     void knuth_morris_pratt();
+    // Structs
+    struct PrefixResult {
+        int prefix_length;
+        vector<int> positions;
+        int chars_compared;
+    };
+    struct CompareResult {
+        bool isMatch;
+        int chars_compared;
+        int idx;
+    };
+    PrefixResult find_prefix_suffix(string the_pattern);
+    CompareResult compare(int i, string the_pattern, unsigned long pattern_size, string the_text, vector<int> positions);
 };

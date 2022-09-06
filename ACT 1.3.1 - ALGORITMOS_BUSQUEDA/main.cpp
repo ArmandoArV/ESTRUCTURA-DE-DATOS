@@ -23,6 +23,7 @@ int main()
         cout << "[1] Search all\n";
         cout << "[2] Compare demo\n";
         cout << "[3] Iter demo\n";
+        cout << "[4] Smarter search\n";
         cout << "[5] Morris Pratt\n";
         cout << "[0] Exit\n";
         cout << "----------------------------------------\n";
@@ -40,6 +41,7 @@ int main()
             searcher1.iter_demo();
             break;
         case 4:
+            searcher1.smarter_search();
             break;
         case 5:
             searcher1.knuth_morris_pratt();
