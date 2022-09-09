@@ -2,11 +2,16 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <map>
 #include "Fecha.cpp"
 #include "Bitacora.cpp"
 using namespace std;
 
 vector<Bitacora> bitacoras;
+vector<Bitacora> bitacoras2;
+vector<Bitacora> repetidas;
+
+
 
 void quicksort(vector<Bitacora> &bitacoras, int left, int right){
     int i = left, j = right;
@@ -32,7 +37,6 @@ void quicksort(vector<Bitacora> &bitacoras, int left, int right){
     if (i < right)
         quicksort(bitacoras, i, right);
 }
-
 
 
 int main(){
@@ -63,10 +67,10 @@ int main(){
             bitacoras.push_back(bitacora);
         }
     }
-
+    const int total = bitacoras.size();
     quicksort(bitacoras, 0, bitacoras.size()-1);
-    int repeated = 0;
-     for(int i = 0; i < bitacoras.size(); i++){
+    for(int i = 0; i < bitacoras.size(); i++){
+        /*
         cout << "-----------------------------------------" << "\n";
         cout << " Number: " << i << "\n";
         cout << " IP: " << bitacoras[i].getIP() <<
@@ -85,24 +89,78 @@ int main(){
         "\n" <<
         " Seconds: " << bitacoras[i].getSecond() << 
         "\n";
+        */
         // verify if the IP is repeated
         if ((i+1) < bitacoras.size()){
-            if(bitacoras[i].getIP() == bitacoras[i+1].getIP() && bitacoras[i].getPuerto() == bitacoras[i+1].getPuerto()){
+            if(bitacoras[i].getIP() == bitacoras[i+1].getIP() && bitacoras[i].getPuerto() == bitacoras[i+1].getPuerto() && bitacoras[i].getReason() == bitacoras[i+1].getReason()){
                 cout << " Repeated." << "\n";
-                repeated++;
                 // remove the repeated IP
-                bitacoras.erase(bitacoras.begin()+i);
+                repetidas.push_back(bitacoras[i-1]);
             }
             else 
             {
                 cout << " Non repeated." << "\n";
+                // push the non repeated IP to the vector bitacoras2
+                bitacoras2.push_back(bitacoras[i]);
             }
         }
-    }   
+    }
+    const int total_repeated = repetidas.size();   
     cout << "-----------------------------------------" << "\n";
-    cout << "Number of registries: " << bitacoras.size() << "\n";
-    cout << "Repeated registries: " << repeated << "\n";
+    cout << "Number of registries: " << total << "\n";
+    cout << "Repeated registries: " << total_repeated << "\n";
     cout << "-----------------------------------------" << "\n";
+    cout << "New number of registries: " << bitacoras2.size() << "\n";
+    cout << "-----------------------------------------" << "\n";
+    cout << "Ordered repeated registries: " "\n";
+    for(int i = 0; i < repetidas.size(); i++){
+        // remove duplicated registries
+        if(repetidas[i].getIP() == repetidas[i+1].getIP() && repetidas[i].getPuerto() == repetidas[i+1].getPuerto() && repetidas[i].getReason() == repetidas[i+1].getReason()){
+            // leave only leave the first repeated registries
+            repetidas.erase(repetidas.begin() + i);
+        }
+        cout << "-----------------------------------------" << "\n";
+        cout << " Number: " << i << "\n";
+        cout << " IP: " << repetidas[i].getIP() <<
+        "\n" << 
+        " Reason: " << repetidas[i].getReason() <<
+        "\n" <<  
+        " Port: " << repetidas[i].getPuerto() <<
+        "\n" << 
+        " Month: " << repetidas[i].getMonth() <<
+        "\n" <<
+        " Day: " << repetidas[i].getDay() <<
+        "\n" <<
+        " Hour: " << repetidas[i].getHour() << 
+        "\n" <<
+        " Minutes: " << repetidas[i].getMinute() << 
+        "\n" <<
+        " Seconds: " << repetidas[i].getSecond() << 
+        "\n";
+    }
+    monthValidate(bitacoras2);
+    cout << "-----------------------------------------" << "\n";
+    cout << "Ordered registries by access time: " "\n";
+    for (int i = 0; i < bitacoras2.size(); i++){
+        cout << "-----------------------------------------" << "\n";
+        cout << " Number: " << i << "\n";
+        cout << " IP: " << bitacoras2[i].getIP() <<
+        "\n" << 
+        " Reason: " << bitacoras2[i].getReason() <<
+        "\n" <<  
+        " Port: " << bitacoras2[i].getPuerto() <<
+        "\n" << 
+        " Month: " << bitacoras2[i].getMonth() <<
+        "\n" <<
+        " Day: " << bitacoras2[i].getDay() <<
+        "\n" <<
+        " Hour: " << bitacoras2[i].getHour() << 
+        "\n" <<
+        " Minutes: " << bitacoras2[i].getMinute() << 
+        "\n" <<
+        " Seconds: " << bitacoras2[i].getSecond() << 
+        "\n";
+    }
 
 
     return 0;
