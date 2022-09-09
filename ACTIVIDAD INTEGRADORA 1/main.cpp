@@ -39,6 +39,7 @@ void quicksort(vector<Bitacora> &bitacoras, int left, int right){
 }
 
 
+
 int main(){
     // Read file bitacora.txt
     ifstream file("bitacora.txt");
@@ -70,7 +71,6 @@ int main(){
     const int total = bitacoras.size();
     quicksort(bitacoras, 0, bitacoras.size()-1);
     for(int i = 0; i < bitacoras.size(); i++){
-        /*
         cout << "-----------------------------------------" << "\n";
         cout << " Number: " << i << "\n";
         cout << " IP: " << bitacoras[i].getIP() <<
@@ -89,7 +89,6 @@ int main(){
         "\n" <<
         " Seconds: " << bitacoras[i].getSecond() << 
         "\n";
-        */
         // verify if the IP is repeated
         if ((i+1) < bitacoras.size()){
             if(bitacoras[i].getIP() == bitacoras[i+1].getIP() && bitacoras[i].getPuerto() == bitacoras[i+1].getPuerto() && bitacoras[i].getReason() == bitacoras[i+1].getReason()){
@@ -138,29 +137,8 @@ int main(){
         " Seconds: " << repetidas[i].getSecond() << 
         "\n";
     }
-    monthValidate(bitacoras2);
     cout << "-----------------------------------------" << "\n";
-    cout << "Ordered registries by access time: " "\n";
-    for (int i = 0; i < bitacoras2.size(); i++){
-        cout << "-----------------------------------------" << "\n";
-        cout << " Number: " << i << "\n";
-        cout << " IP: " << bitacoras2[i].getIP() <<
-        "\n" << 
-        " Reason: " << bitacoras2[i].getReason() <<
-        "\n" <<  
-        " Port: " << bitacoras2[i].getPuerto() <<
-        "\n" << 
-        " Month: " << bitacoras2[i].getMonth() <<
-        "\n" <<
-        " Day: " << bitacoras2[i].getDay() <<
-        "\n" <<
-        " Hour: " << bitacoras2[i].getHour() << 
-        "\n" <<
-        " Minutes: " << bitacoras2[i].getMinute() << 
-        "\n" <<
-        " Seconds: " << bitacoras2[i].getSecond() << 
-        "\n";
-    }
+    
 
 
     return 0;
