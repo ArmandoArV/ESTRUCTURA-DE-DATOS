@@ -11,21 +11,22 @@ using namespace std;
 class Fecha{
     private:
         string month;
-        int day;
-        int hour;
-        int minute;
-        int second;
+        string day;
+        string hour;
+        string minute;
+        string second;
     public:
-        Fecha(string month, int day, int hour, int minute, int second);
+        Fecha(string month, string day, string hour, string minute, string second);
+        Fecha();
         ~Fecha();
         string getMonth();
-        int getDay();
-        int getHour();
-        int getMinute();
-        int getSecond();
+        string getDay();
+        string getHour();
+        string getMinute();
+        string getSecond();
         void setMonth(string month);
-        void setDay(int day);
-        void setHour(int hour);
-        void setMinute(int minute);
-        void setSecond(int second);
+        void setDay(string day);
+        void setHour(string hour);
+        void setMinute(string minute);
+        void setSecond(string second);
 };

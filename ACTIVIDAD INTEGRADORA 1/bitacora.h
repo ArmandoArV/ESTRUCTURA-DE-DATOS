@@ -10,16 +10,22 @@
 #include "fecha.h"
 using namespace std;
 
-class Bitacora{
+class Bitacora: public Fecha{
     private:
         string IP;
         string reason;
-
+        string puerto;
+        Fecha fecha;
+        
     public:
-        Bitacora(string IP, string reason);
+        Bitacora(string IP, string reason, string puerto,Fecha fecha);
+        Bitacora();
         ~Bitacora();
         string getIP();
         string getReason();
+        string getPuerto();
         void setIP(string IP);
         void setReason(string reason);
+        void setPuerto(string puerto);
+        void quickSort(vector<Bitacora> &bitacora, int, int);
 };
