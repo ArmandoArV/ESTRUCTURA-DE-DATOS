@@ -7,14 +7,15 @@ using namespace std;
 #include "Node.cpp"
 #include "NodePtr.cpp"
 #include "linkedList.cpp"
+#include "NodePtrTwo.cpp"
+#include "linkedListTwo.cpp"
+
 int main(){
     linkedList list;
-    list.insertInOrder(5);
-    list.insertInOrder(3);
-    list.insertInOrder(1);
-    list.recorrer();
-    list.eraseByKey(3);
-    list.recorrer();
-    list.deleteLastValue();
-    list.recorrer();
+    linkedListTwo listTwo;
+    listTwo.insertInOrder(8);
+    listTwo.insertInOrder(12);
+    listTwo.insertInOrder(14);
+    listTwo.recorrer();
+    return 0;
 }
