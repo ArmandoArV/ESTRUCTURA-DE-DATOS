@@ -9,6 +9,8 @@ using namespace std;
 #include "linkedList.cpp"
 #include "NodePtrTwo.cpp"
 #include "linkedListTwo.cpp"
+#include "Stack.cpp"
+#include "Queue.cpp"
 
 int main(){
     linkedList list;
