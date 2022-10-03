@@ -30,5 +30,8 @@ class Binnacle{
         void setPort(string port);
         void setReason(string reason);
         void printBinnacle();
-        
+        bool operator<=(Binnacle);
+
+        friend ostream& operator<=(ostream& os, const Binnacle& binnacle);
+        friend ostream& operator<<(ostream& os, const Binnacle& binnacle);
 };

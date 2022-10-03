@@ -6,6 +6,7 @@
 
 #pragma once
 #include "nodePtrTwo.h"
+#include "binnacle.h"
 
 class Stack{
     private:
@@ -13,7 +14,7 @@ class Stack{
     public:
         Stack();
         ~Stack();
-        void push(int);
+        void push(Binnacle);
         void pop();
         NodePtrTwo *peek();
         bool isEmpty();

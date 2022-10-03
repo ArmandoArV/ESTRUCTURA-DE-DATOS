@@ -1,5 +1,12 @@
+/*
+    Date: 08/10/2022
+    Made by: Armando Arredondo Valle
+*/
 #pragma once
 #include "nodePtrTwo.h"
+#include "binnacle.h"
+#include <iostream>
+using namespace std;
 
 class linkedListTwo{
     private:
@@ -12,5 +19,5 @@ class linkedListTwo{
         void recorrer();
         void insertInOrder(Binnacle);
         void eraseByData(Binnacle);
-        
+        bool isEmpty();
 };

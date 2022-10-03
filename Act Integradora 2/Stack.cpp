@@ -21,7 +21,7 @@ bool Stack::isEmpty(){
     }
 }
 
-void Stack::push(int data){
+void Stack::push(Binnacle data){
     NodePtrTwo *newNode = new NodePtrTwo(data);
     if(isEmpty()){
         top = newNode;

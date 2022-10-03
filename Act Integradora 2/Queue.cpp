@@ -22,7 +22,7 @@ bool Queue::isEmpty(){
     }
 }
 
-void Queue::enqueue(int data){
+void Queue::enqueue(Binnacle data){
     NodePtrTwo *newNode = new NodePtrTwo(data);
     if(isEmpty()){
         front = newNode;

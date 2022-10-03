@@ -6,15 +6,15 @@
 
 #pragma once
 #include "nodePtrTwo.h"
-
+#include "binnacle.h"
 class Queue {
     private:
-        NodePtr *front;
+        NodePtrTwo *front;
     public:
         Queue();
         ~Queue();
         bool isEmpty();
-        void enqueue(int data);
+        void enqueue(Binnacle data);
         void dequeue();
         NodePtrTwo* peek();
         NodePtrTwo *getLast();

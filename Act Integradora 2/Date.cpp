@@ -8,13 +8,9 @@
 #include <string>
 using namespace std;
 
-Date::Date(){
-    month = "00";
-    day = "00";
-    hour = "00:00:00";
-}
+Date::Date(){}
 
-Date::Date(string month, string day, string hour){
+Date::Date(string month, int day, int hour, int minute, int second){
     this->month = month;
     this->day = day;
     this->hour = hour;
@@ -22,21 +18,19 @@ Date::Date(string month, string day, string hour){
 
 Date::~Date(){}
 
+// Getters
 string Date::getMonth(){return month;}
+int Date::getDay(){return day;}
+int Date::getHour(){return hour;}
+int Date::getMinute(){return minute;}
+int Date::getSecond(){return second;}
 
-string Date::getDay(){return day;}
-
-
-string Date::getHour(){return hour;}
-
+// Setters
 void Date::setMonth(string month){this->month = month;}
+void Date::setDay(int day){this->day = day;}
+void Date::setHour(int hour){this->hour = hour;}
+void Date::setMinute(int minute){this->minute = minute;}
+void Date::setSecond(int second){this->second = second;}
 
-void Date::setDay(string day){this->day = day;}
-
-void Date::setHour(string hour){this->hour = hour;}
-
-string Date::printDate(){
-    return month + " " + day + " " + hour;
-}
 
 

@@ -9,11 +9,11 @@
 #include <string>
 #include "Binnacle.cpp"
 #include "Date.cpp"
-//#include "LinkedListTwo.cpp"
+#include "LinkedListTwo.cpp"
 #include "Node.cpp"
 //#include "Queue.cpp"
 //#include "Stack.cpp"
-//#include "NodePtrTwo.cpp"
+#include "NodePtrTwo.cpp"
 using namespace std;
 
 //linkedList binnacleList;
@@ -40,11 +40,11 @@ int main(){
                         counter++;
                     }
                     else if (counter ==  1){
-                        date.setDay(word);
+                        date.setDay(stoi(word));
                         counter++;
                     }
                     else if( counter == 2){
-                        date.setHour(word);
+                        date.setHour(stoi(word));
                         counter++;
                     }
                     else if (counter == 3){
@@ -72,6 +72,5 @@ int main(){
         } while (!file.fail());
     }else {
         cout << "Error, file not found." << endl;
-    }
-
+}
 }

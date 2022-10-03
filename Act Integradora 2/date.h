@@ -9,16 +9,22 @@ using namespace std;
 
 class Date{
     private:
-        string month, day, hour;
+        string month;
+        int day, hour, minute, second;
     public:
         Date();
-        Date(string month, string day, string hour);
+        Date(string month, int day, int hour, int minute, int second);
         ~Date();
         string getMonth();
-        string getDay();
-        string getHour();
+        int getDay();
+        int getHour();
+        int getMinute();
+        int getSecond();
         string printDate();
         void setMonth(string month);
-        void setDay(string day);
-        void setHour(string hour);
+        void setDay(int day);
+        void setHour(int hour);
+        void setMinute(int minute);
+        void setSecond(int second);
+
 };
