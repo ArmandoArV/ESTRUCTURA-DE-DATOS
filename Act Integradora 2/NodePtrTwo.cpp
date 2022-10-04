@@ -1,3 +1,8 @@
+/*
+    Made by: Armando Arredondo Valle
+    Date: 29/09/2022
+
+*/
 #include "node.h"
 #include "nodePtrTwo.h"
 #include <iostream>

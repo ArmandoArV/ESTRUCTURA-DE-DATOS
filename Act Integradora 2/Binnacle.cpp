@@ -73,4 +73,5 @@ bool Binnacle::operator<=(Binnacle b2) {  // Time Complexity O(1)
             }
         }
     }
+    return false;
 }

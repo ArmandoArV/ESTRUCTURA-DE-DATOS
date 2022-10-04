@@ -44,7 +44,7 @@ void linkedListTwo::appendInOrder(Binnacle data) { // Complejidad O👎
             aux->setBefore(newNode);
         }
     }
-}
+} // Complejidad O(N)
 
 void linkedListTwo::eraseByData(string data){
     if(isEmpty()){
@@ -117,19 +117,22 @@ void linkedListTwo::searchByData(string data,string data2){
 
 
 void linkedListTwo::viewLast(){
-    if(isEmpty()){
-        cout << "The queue is empty" << endl;
-    }else{
-        NodePtrTwo *before = head, *aux = head;
+    if (head == NULL){
+    cout << "NULL" << endl;
+    }
+    else{
+        NodePtrTwo *antes = head, *aux=head;
         while(aux != NULL){
-            before = aux;
-            aux = aux->getNext();
+        antes = aux;
+        aux = aux->getNext();
         }
-        if (aux == NULL){
-            cout << before->getData().getIP() << " "<< before-> getData().getDate().getMonthInt() << "\n";
+    if (aux == NULL){
+        cout << "Fin de la Fila" << endl;
+        cout << antes->getData().getIP() << "\n";
+        cout << "\n";
         }
     }
-} // Complejidad O(n)
+}//Complejidad: O(N)
 
 void linkedListTwo::viewFirst(){
     if(isEmpty()){
