@@ -75,11 +75,13 @@ void linkedListTwo::eraseByData(string data){
     }
 }
 
+
+
 void linkedListTwo::printThrough() {
     NodePtrTwo* aux = head;
     while(aux != NULL){
 
-        cout << "| IP: | " << aux->getData().getIP() << " | Port: | " << aux->getData().getPort() << " | Action: | " << aux->getData().getReason() << " | Month: | " << aux->getData().getDate().getMonthInt() << " | Day: | " << aux->getData().getDate().getDay() << " | Hour: | " << aux->getData().getDate().getHour() << " | Minutes: | " << aux->getData().getDate().getMinute() << " | Seconds: | "  << aux->getData().getDate().getSecond()<< "\n";
+        cout << "| IP: | " << aux->getData().getIP() << " | Port: | " << aux->getData().getPort() << " | Month: | " << aux->getData().getDate().getMonthInt() << " | Day: | " << aux->getData().getDate().getDay() << " | Hour: | " << aux->getData().getDate().getHour() << " | Minutes: | " << aux->getData().getDate().getMinute() << " | Seconds: | "  << aux->getData().getDate().getSecond()<< " | Action: | " << aux->getData().getReason() << "\n";
         cout << "--------------------------------------------------------------------------------------------------------------------------------" << "\n";
         aux = aux->getNext();
     }
@@ -101,7 +103,6 @@ void linkedListTwo::searchByData(string data,string data2){
             aux = aux->getNext();
         }
     }
-    
-    cout << "\n========================================== The IPs between " << data << " and " << data2 << " are: =======================================\n";
+    cout << "========================================== The IPs between " << data << " and " << data2 << " are: =======================================\n";
     return newList.printThrough();
 }
