@@ -74,7 +74,9 @@ int main(){
     }else {
         cout << "Error, file not found." << "\n";
 }
-    binnacleList.eraseByData("812.65.417.10");
-    binnacleList.printThrough();
     binnacleList.searchByData("390.79.891.60","122.45.361.3");
+    binnacleList.eraseByData("543.89.843.57");
+    binnacleList.printThrough();
+    
+    return 0;
 }
