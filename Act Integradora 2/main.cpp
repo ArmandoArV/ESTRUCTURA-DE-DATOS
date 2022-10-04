@@ -22,7 +22,7 @@ linkedListTwo binnacleList;
 int main(){
     int counter = 0;
     string sentences;
-    ifstream file("bita.txt");
+    ifstream file("bitacora.txt");
     if (file.is_open()){
         do {
             getline(file,sentences);

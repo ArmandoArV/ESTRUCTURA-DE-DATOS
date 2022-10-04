@@ -127,9 +127,7 @@ void linkedListTwo::viewLast(){
         aux = aux->getNext();
         }
     if (aux == NULL){
-        cout << "Fin de la Fila" << endl;
-        cout << antes->getData().getIP() << "\n";
-        cout << "\n";
+        cout << "The last IP is: " << antes->getData().getIP() << endl;
         }
     }
 }//Complejidad: O(N)
