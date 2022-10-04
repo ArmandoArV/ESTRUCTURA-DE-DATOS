@@ -74,9 +74,15 @@ int main(){
     }else {
         cout << "Error, file not found." << "\n";
 }
-    binnacleList.searchByData("390.79.891.60","122.45.361.3");
-    binnacleList.eraseByData("543.89.843.57");
-    binnacleList.printThrough();
-    
+    cout << "\n=============================================================================================================================================\n";
+    cout << "||                                                      Binnacle List                                                                        ||" << "\n";
+    cout << "=============================================================================================================================================\n";
+    binnacleList.recorrer();
+    binnacleList.searchByData("246.92.643.20", "545.2.257.56");
+    binnacleList.eraseByData("880.42.424.6");
+    binnacleList.recorrer();
+    binnacleList.viewLast();
+    binnacleList.viewFirst();
+
     return 0;
 }

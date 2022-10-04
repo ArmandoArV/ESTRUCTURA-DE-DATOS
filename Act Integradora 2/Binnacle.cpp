@@ -35,14 +35,42 @@ void Binnacle::setIP(string IP){this->IP = IP;}
 void Binnacle::setPort(string port){this->port = port;}
 void Binnacle::setReason(string reason){this->reason = reason;}
 
-bool Binnacle::operator<=(Binnacle data) {
-    if(getDate().getMonth() > data.getDate().getMonth()) {
-        return false;
-    } else if (getDate().getDay() > data.getDate().getDay()) {
-        return false;
-    } else if (getDate().getHour() > data.getDate().getHour()) {
-        return false;
-    } else {
+bool Binnacle::operator<=(Binnacle b2) {  // Time Complexity O(1)
+    if(getDate().getMonthInt() < b2.getDate().getMonthInt()) {
         return true;
+    }
+    if (getDate().getMonthInt() > b2.getDate().getMonthInt()){
+        return false;
+    }
+    if (getDate().getMonthInt() == b2.getDate().getMonthInt()){
+        if (getDate().getDay() < b2.getDate().getDay()) {
+            return true;
+        }
+        if (getDate().getDay() > b2.getDate().getDay()){
+            return false;
+        }
+        if (getDate().getDay() == b2.getDate().getDay()) {
+            if (getDate().getHour() < b2.getDate().getHour()) {
+                return true;
+            }
+            if (getDate().getHour() > b2.getDate().getHour()){
+                return false;
+            }
+            if (getDate().getHour() == b2.getDate().getHour()){
+                if (getDate().getMinute() < b2.getDate().getMinute()) {
+                    return true;
+                }
+                if (getDate().getMinute() > b2.getDate().getMinute()){
+                    return false;
+                }
+                if (getDate().getMinute() == b2.getDate().getMinute()){
+                    if (getDate().getSecond() <= b2.getDate().getSecond()) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

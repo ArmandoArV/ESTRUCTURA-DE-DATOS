@@ -20,6 +20,8 @@ class linkedListTwo: public NodePtrTwo{
         void appendInOrder(Binnacle);
         void eraseByData(string);
         void searchByData(string,string);
+        void viewLast();
+        void viewFirst();
         bool isEmpty();
-        void printThrough();
+        ostream& operator<<(std::ostream &o);
 };
