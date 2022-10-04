@@ -7,8 +7,12 @@
 #include "binnacle.h"
 #include "queue.h"
 #include <iostream>
+#include <fstream>
+
 
 using namespace std;
+
+ofstream File("Casos_De_Prueba.txt");
 
 linkedListTwo::linkedListTwo(){this->head = NULL;}
 
@@ -61,6 +65,10 @@ void linkedListTwo::eraseByData(string data){
             cout << "||                                                      Erase                                                                                ||" << "\n";
             cout << "=============================================================================================================================================\n";
             cout << "\n =========================================== The IP: " << data << " has been deleted =======================================\n";
+            File << "\n=============================================================================================================================================\n";
+            File << "||                                                      Erase                                                                                ||" << "\n";
+            File << "=============================================================================================================================================\n";
+            File << "\n =========================================== The IP: " << data << " has been deleted =======================================\n";
         }
         else if (aux == before){
             head = aux->getNext();
@@ -87,6 +95,8 @@ void linkedListTwo::recorrer() {
     while(aux != NULL){
         cout << "| IP: | " << aux->getData().getIP() << " | Port: | " << aux->getData().getPort() << " | Month: | " << aux->getData().getDate().getMonthInt() << " | Day: | " << aux->getData().getDate().getDay() << " | Hour: | " << aux->getData().getDate().getHour() << " | Minutes: | " << aux->getData().getDate().getMinute() << " | Seconds: | "  << aux->getData().getDate().getSecond()<< " | Action: | " << aux->getData().getReason() << "\n";
         cout << "--------------------------------------------------------------------------------------------------------------------------------" << "\n";
+        File << "| IP: | " << aux->getData().getIP() << " | Port: | " << aux->getData().getPort() << " | Month: | " << aux->getData().getDate().getMonthInt() << " | Day: | " << aux->getData().getDate().getDay() << " | Hour: | " << aux->getData().getDate().getHour() << " | Minutes: | " << aux->getData().getDate().getMinute() << " | Seconds: | "  << aux->getData().getDate().getSecond()<< " | Action: | " << aux->getData().getReason() << "\n";
+        File << "--------------------------------------------------------------------------------------------------------------------------------" << "\n";
         aux = aux->getNext();
     }
 } // Complejidad O(n)
@@ -112,6 +122,10 @@ void linkedListTwo::searchByData(string data,string data2){
     cout << "||                                                  Check between                                                                            ||" << "\n";
     cout << "=============================================================================================================================================\n";
     cout << "\n========================================== The IPs between " << data << " and " << data2 << " are: =======================================\n";
+    File << "\n=============================================================================================================================================\n";
+    File << "||                                                  Check between                                                                            ||" << "\n";
+    File << "=============================================================================================================================================\n";
+    File << "\n========================================== The IPs between " << data << " and " << data2 << " are: =======================================\n";
     return newList.recorrer();
 } // Complejidad O(n)
 
@@ -128,6 +142,7 @@ void linkedListTwo::viewLast(){
         }
     if (aux == NULL){
         cout << "The last IP is: " << antes->getData().getIP() << endl;
+        File << "The last IP is: " << antes->getData().getIP() << endl;
         }
     }
 }//Complejidad: O(N)
@@ -137,5 +152,6 @@ void linkedListTwo::viewFirst(){
         cout << "The queue is empty" << endl;
     }else{
         cout << "The first element is: " << head->getData().getIP() << "\n";
+        File << "The first element is: " << head->getData().getIP() << "\n";
     }
 } // Complejidad O(1)
