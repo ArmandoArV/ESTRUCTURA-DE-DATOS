@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-class linkedListTwo{
+class linkedListTwo: public NodePtrTwo{
     private:
         NodePtrTwo* head;
     public:
@@ -17,7 +17,8 @@ class linkedListTwo{
         NodePtrTwo* getHead();
         void setHead(NodePtrTwo*);
         void recorrer();
-        void insertInOrder(Binnacle);
+        void appendInOrder(Binnacle);
         void eraseByData(Binnacle);
         bool isEmpty();
+        void printThrough();
 };

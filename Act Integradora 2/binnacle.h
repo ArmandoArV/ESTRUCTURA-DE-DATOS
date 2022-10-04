@@ -9,7 +9,7 @@
 #include <string>
 using namespace std;
 
-class Binnacle{
+class Binnacle: public Date{
     private:
         Date date;
         string IP, port, reason;
@@ -30,8 +30,13 @@ class Binnacle{
         void setPort(string port);
         void setReason(string reason);
         void printBinnacle();
+        bool operator<(Binnacle);
+        bool operator>(Binnacle);
+        bool operator>=(Binnacle);
         bool operator<=(Binnacle);
+        friend ostream& operator<<(ostream& out, Binnacle&printOutput){
+            out << printOutput.getMonth() << " " << printOutput.getDay() << " " << printOutput.getHour() << " " << printOutput.getIP() << " " << printOutput.getPort() << " " << printOutput.getReason() << "\n";
+            return out;
+        }
 
-        friend ostream& operator<=(ostream& os, const Binnacle& binnacle);
-        friend ostream& operator<<(ostream& os, const Binnacle& binnacle);
 };

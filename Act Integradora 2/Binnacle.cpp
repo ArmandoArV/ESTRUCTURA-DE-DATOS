@@ -46,22 +46,3 @@ bool Binnacle::operator<=(Binnacle data) {
         return true;
     }
 }
-
-ostream& operator<<(ostream& os, linkedListTwo doubleList){ // Complejidad O👎
-    os << "|| Contenido de la bitácora || \n" <<
-          "================================== \n";
-    if (doubleList.isEmpty()){
-        return os;
-    } else {
-        NodePtrTwo* aux = doubleList.getHead();
-        while (aux != nullptr){
-            os << "Fecha: " << aux->getData().getDate().getMonth() << " " << aux->getData().getDate().getDay() << " " << aux->getData().getDate().getHour() << ":" << aux->getData().getDate().getMinute() << ":" << aux->getData().getDate().getSecond() << endl;
-            os << "IP: " << aux->getData().getIP() << endl;
-            os << "Puerto: " << aux->getData().getPort() << endl;
-            os << "Razón: " << aux->getData().getReason() << endl;
-            os << "================================== \n";
-            aux = aux->getNext();
-        }
-        return os;
-    }
-}

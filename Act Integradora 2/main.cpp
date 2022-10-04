@@ -16,13 +16,13 @@
 #include "NodePtrTwo.cpp"
 using namespace std;
 
-//linkedList binnacleList;
+linkedListTwo binnacleList;
 
 
 int main(){
     int counter = 0;
     string sentences;
-    ifstream file("bitacora.txt");
+    ifstream file("bita.txt");
     if (file.is_open()){
         do {
             getline(file,sentences);
@@ -51,10 +51,6 @@ int main(){
                         IP = word;
                         counter++;
                     }
-                    else if (counter == 4){
-                        port = port;
-                        counter++;
-                    }
                     word = "";
                     if (spaces == 4){
                         action = sentences.substr(i+1);
@@ -66,11 +62,16 @@ int main(){
                     word += sentences[i];
                 }
             }
+            port = IP.substr(IP.find(":")+1);
+            IP = IP.substr(0,IP.find(":"));
             Binnacle bitacora(date, IP, port, action);
+
             // here will insert the binnacle in the linked list
-            //binnacleList.insert(bitacora);
+            binnacleList.appendInOrder(bitacora);
         } while (!file.fail());
     }else {
-        cout << "Error, file not found." << endl;
+        cout << "Error, file not found." << "\n";
 }
+    cout << "The binnacle has been loaded." << "\n";
+    binnacleList.printThrough();
 }
