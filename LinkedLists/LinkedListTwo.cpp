@@ -12,6 +12,9 @@ NodePtrTwo* linkedListTwo::getHead(){return this->head;}
 
 void linkedListTwo::setHead(NodePtrTwo *head){this->head = head;}
 
+
+
+
 void linkedListTwo::recorrer(){    //Imprime todos los valores de la lista
             if(head == NULL){    //Si la lista está vacia
                 cout << "La lista está vacia" << endl;

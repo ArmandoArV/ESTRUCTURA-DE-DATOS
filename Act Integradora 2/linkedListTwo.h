@@ -18,7 +18,8 @@ class linkedListTwo: public NodePtrTwo{
         void setHead(NodePtrTwo*);
         void recorrer();
         void appendInOrder(Binnacle);
-        void eraseByData(Binnacle);
+        void eraseByData(string);
+        void searchByData(string,string);
         bool isEmpty();
         void printThrough();
 };

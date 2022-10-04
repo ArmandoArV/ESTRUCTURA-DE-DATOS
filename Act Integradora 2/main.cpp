@@ -45,6 +45,8 @@ int main(){
                     }
                     else if( counter == 2){
                         date.setHour(stoi(word));
+                        date.setMinute(stoi(word.substr(3,2)));
+                        date.setSecond(stoi(word.substr(6,2)));
                         counter++;
                     }
                     else if (counter == 3){
@@ -65,13 +67,14 @@ int main(){
             port = IP.substr(IP.find(":")+1);
             IP = IP.substr(0,IP.find(":"));
             Binnacle bitacora(date, IP, port, action);
-
             // here will insert the binnacle in the linked list
             binnacleList.appendInOrder(bitacora);
+    
         } while (!file.fail());
     }else {
         cout << "Error, file not found." << "\n";
 }
-    cout << "The binnacle has been loaded." << "\n";
+    binnacleList.eraseByData("812.65.417.10");
     binnacleList.printThrough();
+    binnacleList.searchByData("390.79.891.60","122.45.361.3");
 }

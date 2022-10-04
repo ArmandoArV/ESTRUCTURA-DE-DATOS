@@ -1,5 +1,6 @@
 #pragma once
 #include "nodePtrTwo.h"
+#include "binnacle.h"
 
 class linkedListTwo{
     private:
@@ -11,5 +12,5 @@ class linkedListTwo{
         void setHead(NodePtrTwo*);
         void recorrer();
         void insertInOrder(int);
-        void eraseByData(int);
+        void eraseByData(string);
 };
