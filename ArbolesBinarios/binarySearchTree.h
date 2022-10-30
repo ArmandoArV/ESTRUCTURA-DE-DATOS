@@ -18,4 +18,5 @@ class BinarySearchTree {
         void insert(int data);
         void inOrder(NodePtr*);
         void insert();
+        void eraseNode(int data);
 };

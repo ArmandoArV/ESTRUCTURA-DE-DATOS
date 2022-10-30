@@ -50,3 +50,22 @@ void BinarySearchTree::insert(int data){
         }
     }
 }
+
+
+
+void BinarySearchTree::eraseNode(int data){
+    if (root == NULL){
+        cout << "The tree is empty \n";
+        return;
+    }
+    else {
+        NodePtr *before = root, *aux = root;
+        while(aux!=NULL && aux->getData() != data){
+            before = aux;
+            if (aux->getData() > data){
+                aux = aux->getLeft();
+            }
+            
+        }
+    }
+}

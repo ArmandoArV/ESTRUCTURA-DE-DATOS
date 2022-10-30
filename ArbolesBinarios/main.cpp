@@ -15,5 +15,7 @@ int main(){
     arbol.insert(5);
     arbol.insert(8);
     arbol.insert(4);
+    arbol.eraseNode(5);
     arbol.inOrder(arbol.getRoot());
+    return 0;
 }
