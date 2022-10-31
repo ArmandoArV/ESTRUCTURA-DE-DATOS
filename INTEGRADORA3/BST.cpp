@@ -122,10 +122,18 @@ void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) {
     }
 }
 
-void BST::printInOrder(NodePtr *aux) {
+void BST::preOrder(NodePtr *aux) {
     if (aux != nullptr) {
-        printInOrder(aux->getLeft());
         cout << aux->getData() << endl; // Aqui
-        printInOrder(aux->getRight());
+        preOrder(aux->getLeft());
+        preOrder(aux->getRight());
+    }
+}
+
+void BST::posOrder(NodePtr *aux) {
+    if (aux != nullptr) {
+        posOrder(aux->getLeft());
+        posOrder(aux->getRight());
+        cout << aux->getData() << endl;
     }
 }
