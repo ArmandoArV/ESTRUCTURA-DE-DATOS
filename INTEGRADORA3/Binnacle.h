@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class Binnacle {
+class Binnacle : public error_code {
 private:
     string IP,port;
 public:
@@ -20,11 +20,11 @@ public:
     // Setters
     void setIP(string IP);
     void setPort(string port);
-    void printBinnacle();
-    friend ostream& operator<<(ostream& out, Binnacle&printOutput){
-        out << printOutput.getIP() << " " << printOutput.getPort() << "\n";
-        return out;
-    }
+    bool operator>(Binnacle);
+    bool operator<(Binnacle);
+    bool operator != (Binnacle);
+    bool operator == (Binnacle);
+    friend ostream& operator<<(ostream& os, const Binnacle& b);
 };
 
 

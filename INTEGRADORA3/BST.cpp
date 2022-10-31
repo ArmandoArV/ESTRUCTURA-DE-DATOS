@@ -22,35 +22,48 @@ NodePtr *BST::getRoot() {return root;}
 int BST::getSize() {return size;}
 
 // Setters
-void BST::setRoot(NodePtr *root) {BST::root = root;}
-void BST::setSize(int size) {BST::size = size;}
+void BST::setRoot(NodePtr *root) { BST::root = root; }
 
+void BST::setSize(int size) { BST::size = size; }
 // Methods
 
 
-void BST::insert(NodePtr *node, Binnacle *data) {
-    if (data->getIP() < node->getData().getIP()){
-        if (node->getLeft() == nullptr){
-            node->setLeft(new NodePtr(data));
-        }else{
-            insert(node->getLeft(), data);
+
+void BST::insertInOrder(Binnacle bitacora) {
+    NodePtr *newNode = new NodePtr(bitacora);
+    if (root == nullptr) {
+        root = newNode;
+    } else {
+        NodePtr *previous = root, *aux = root;
+        while (aux != nullptr && aux->getData() != bitacora) {
+            previous = aux;
+            if (aux->getData() > bitacora) {
+                aux = aux->getLeft();
+            } else {
+                aux = aux->getRight();
+            }
         }
-    }else{
-        if (node->getRight() == nullptr){
-            node->setRight(new NodePtr(data));
-        }else{
-            insert(node->getRight(), data);
+        if (aux != nullptr) {
+            cout << "Node already exists" << endl;
+            return;
+        } else {
+            if (previous->getData() < newNode->getData()) {
+                previous->setRight(newNode);
+            } else {
+                previous->setLeft(newNode);
+            }
         }
     }
 }
 
-void BST::inOrder(NodePtr*aux) {
-    Binnacle binnacle;
-    if(aux!= nullptr){
-        inOrder(aux->getLeft());
-        binnacle = aux->getData();
-        cout << binnacle << "\n";
-        inOrder(aux->getRight());
+
+
+
+
+void BST::printInOrder(NodePtr *aux) {
+    if (aux != nullptr) {
+        printInOrder(aux->getLeft());
+        cout << aux->getData() << endl; // Aqui
+        printInOrder(aux->getRight());
     }
 }
-

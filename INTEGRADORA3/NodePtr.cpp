@@ -13,17 +13,14 @@ NodePtr::NodePtr() {
     this->parent = nullptr;
 }
 
-NodePtr::NodePtr(Binnacle *data) {
-    this->data = data;
+NodePtr::NodePtr(Binnacle data) {
     this->right = nullptr;
     this->left = nullptr;
     this->parent = nullptr;
 }
 
 NodePtr::~NodePtr() {
-    delete this->right;
-    delete this->left;
-    delete this->parent;
+
 }
 
 // Getters

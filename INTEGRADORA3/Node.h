@@ -15,7 +15,9 @@ public:
     Node(Binnacle data);
     Node();
     ~Node();
+    // Getters
     Binnacle getData();
+    // Setters
     void setData(Binnacle data);
 
 };

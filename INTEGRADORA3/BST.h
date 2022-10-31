@@ -26,8 +26,9 @@ public:
     void setRoot(NodePtr *root);
     void setSize(int size);
     // Methods
-    void insert(NodePtr *node, Binnacle *data);
-    void inOrder(NodePtr*);
+    void insertInOrder(Binnacle);
+    void insOrder(Binnacle);
+    void printInOrder(NodePtr*);
 };
 
 
