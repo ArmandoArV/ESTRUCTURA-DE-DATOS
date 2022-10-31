@@ -17,6 +17,7 @@ NodePtr::NodePtr(Binnacle data) {
     this->right = nullptr;
     this->left = nullptr;
     this->parent = nullptr;
+    setData(data);
 }
 
 NodePtr::~NodePtr() {

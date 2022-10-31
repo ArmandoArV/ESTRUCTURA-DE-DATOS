@@ -12,13 +12,12 @@ using namespace std;
 
 class NodePtr: public Node {
 private:
-    Binnacle *data;
     NodePtr *right;
     NodePtr *left;
     NodePtr *parent;
 public:
     NodePtr();
-    NodePtr(Binnacle *data);
+    NodePtr(Binnacle data);
     ~NodePtr();
     // Getters
     NodePtr *getRight();

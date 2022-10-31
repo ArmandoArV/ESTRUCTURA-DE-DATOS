@@ -19,7 +19,6 @@ public:
     Binnacle getData();
     // Setters
     void setData(Binnacle data);
-
 };
 
 

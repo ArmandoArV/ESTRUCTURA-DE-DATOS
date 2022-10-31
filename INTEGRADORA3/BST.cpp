@@ -8,6 +8,7 @@
 #include "Binnacle.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 BST::BST() {
@@ -15,18 +16,18 @@ BST::BST() {
     size = 0;
 }
 
-BST::~BST() {delete root;}
+BST::~BST() { delete root; }
 
 // Getters
-NodePtr *BST::getRoot() {return root;}
-int BST::getSize() {return size;}
+NodePtr *BST::getRoot() { return root; }
+
+int BST::getSize() { return size; }
 
 // Setters
 void BST::setRoot(NodePtr *root) { BST::root = root; }
 
 void BST::setSize(int size) { BST::size = size; }
 // Methods
-
 
 
 void BST::insertInOrder(Binnacle bitacora) {
