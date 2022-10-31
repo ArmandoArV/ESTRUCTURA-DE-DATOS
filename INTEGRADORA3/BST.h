@@ -27,8 +27,9 @@ public:
     void setSize(int size);
     // Methods
     void insertInOrder(Binnacle);
-    void insOrder(Binnacle);
     void printInOrder(NodePtr*);
+    void deleteNode(Binnacle);
+    void deleteLeaf(NodePtr*, NodePtr*);
 };
 
 

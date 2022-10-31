@@ -57,9 +57,70 @@ void BST::insertInOrder(Binnacle bitacora) {
     }
 }
 
+void BST::deleteNode(Binnacle bitacora) {
+    NodePtr *aux = root, *previous = root;
+    while (aux != nullptr && aux->getData() != bitacora) {
+        previous = aux;
+        if (aux->getData() > bitacora) {
+            aux = aux->getLeft();
+        } else {
+            aux = aux->getRight();
+        }
+    }
+    if (aux == nullptr) {
+        cout << "Node not found" << endl;
+        return;
+    } else {
+        if (aux->getLeft() == nullptr && aux->getRight() == nullptr) {
+            if (previous->getLeft() == aux) {
+                previous->setLeft(nullptr);
+            } else {
+                previous->setRight(nullptr);
+            }
+            delete aux;
+        } else if (aux->getLeft() != nullptr && aux->getRight() != nullptr) {
+            NodePtr *aux2 = aux->getRight();
+            while (aux2->getLeft() != nullptr) {
+                aux2 = aux2->getLeft();
+            }
+            aux->setData(aux2->getData());
+            if (aux2->getRight() != nullptr) {
+                aux2->setData(aux2->getRight()->getData());
+                aux2->setRight(aux2->getRight()->getRight());
+            } else {
+                aux2->setData(aux2->getLeft()->getData());
+                aux2->setLeft(aux2->getLeft()->getLeft());
+            }
+        } else {
+            if (aux->getLeft() != nullptr) {
+                if (previous->getLeft() == aux) {
+                    previous->setLeft(aux->getLeft());
+                } else {
+                    previous->setRight(aux->getLeft());
+                }
+            } else {
+                if (previous->getLeft() == aux) {
+                    previous->setLeft(aux->getRight());
+                } else {
+                    previous->setRight(aux->getRight());
+                }
+            }
+            delete aux;
+        }
+    }
+}
 
-
-
+void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) {
+    if (aux == root)
+        root = nullptr;
+    else {
+        if (aux == previous->getRight())
+            previous->setRight(nullptr);
+        else
+            previous->setLeft(nullptr);
+        delete aux;
+    }
+}
 
 void BST::printInOrder(NodePtr *aux) {
     if (aux != nullptr) {
