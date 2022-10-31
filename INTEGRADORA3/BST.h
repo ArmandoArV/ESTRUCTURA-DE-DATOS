@@ -27,7 +27,7 @@ public:
     void setSize(int size);
     // Methods
     void insert(NodePtr *node, Binnacle *data);
-    void print();
+    void inOrder(NodePtr*);
 };
 
 

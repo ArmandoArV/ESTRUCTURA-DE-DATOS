@@ -44,4 +44,13 @@ void BST::insert(NodePtr *node, Binnacle *data) {
     }
 }
 
+void BST::inOrder(NodePtr*aux) {
+    Binnacle binnacle;
+    if(aux!= nullptr){
+        inOrder(aux->getLeft());
+        binnacle = aux->getData();
+        cout << binnacle << "\n";
+        inOrder(aux->getRight());
+    }
+}
 
