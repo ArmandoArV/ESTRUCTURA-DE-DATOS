@@ -31,6 +31,8 @@ public:
     void posOrder(NodePtr*);
     void deleteNode(Binnacle);
     void deleteLeaf(NodePtr*, NodePtr*);
+    void deleteOneChild(NodePtr*, NodePtr*);
+    void deleteTwoChild(NodePtr*, NodePtr*);
 };
 
 

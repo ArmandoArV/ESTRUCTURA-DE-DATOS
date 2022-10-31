@@ -110,18 +110,6 @@ void BST::deleteNode(Binnacle bitacora) {
     }
 }
 
-void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) {
-    if (aux == root)
-        root = nullptr;
-    else {
-        if (aux == previous->getRight())
-            previous->setRight(nullptr);
-        else
-            previous->setLeft(nullptr);
-        delete aux;
-    }
-}
-
 void BST::preOrder(NodePtr *aux) {
     if (aux != nullptr) {
         cout << aux->getData() << endl; // Aqui
@@ -136,4 +124,54 @@ void BST::posOrder(NodePtr *aux) {
         posOrder(aux->getRight());
         cout << aux->getData() << endl;
     }
+}
+
+void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) {
+    if (aux == root)
+        root = nullptr;
+    else {
+        if (aux == previous->getRight())
+            previous->setRight(nullptr);
+        else
+            previous->setLeft(nullptr);
+        delete aux;
+    }
+}
+
+void BST::deleteOneChild(NodePtr *aux, NodePtr *previous) {
+    cout << "Delete node with a child\n";
+    if (aux == root) {
+        if (aux->getRight() != nullptr)
+            root = aux->getRight();
+        else
+            root = aux->getLeft();
+    } else {
+        if (aux->getRight() != nullptr)          // el que borro tiene hijo derecho
+            if (previous->getRight() == aux)       // es hijo derecho
+                previous->setRight(aux->getRight()); // sustituyo por su hijo derecho
+            else
+                previous->setLeft(aux->getRight());
+        else {
+            if (previous->getRight() == aux)
+                previous->setRight(aux->getLeft());
+            else
+                previous->setLeft(aux->getLeft());
+        }
+    }
+    delete aux;
+}
+void deleteTwoChild(NodePtr *aux, NodePtr *previous){
+    cout << "Delete node with two children\n";
+    NodePtr *aux2 = aux->getRight();
+    while (aux2->getLeft() != nullptr)
+        aux2 = aux2->getLeft();
+    aux->setData(aux2->getData());
+    if (aux2->getRight() != nullptr)
+        aux2->setData(aux2->getRight()->getData());
+    else
+        aux2->setData(aux2->getLeft()->getData());
+    if (aux2->getRight() != nullptr)
+        aux2->setRight(aux2->getRight()->getRight());
+    else
+        aux2->setLeft(aux2->getLeft()->getLeft());
 }
