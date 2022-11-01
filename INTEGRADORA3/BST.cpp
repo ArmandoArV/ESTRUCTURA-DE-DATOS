@@ -8,6 +8,7 @@
 #include "Binnacle.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -30,7 +31,8 @@ void BST::setSize(int size) { BST::size = size; }
 // Methods
 
 
-void BST::insertInOrder(Binnacle bitacora) {
+void BST::insertInOrder(Binnacle bitacora,vector<Binnacle> &bit) {
+    int counter = 0,val;
     NodePtr *newNode = new NodePtr(bitacora);
     if (root == nullptr) {
         root = newNode;
@@ -45,8 +47,14 @@ void BST::insertInOrder(Binnacle bitacora) {
             }
         }
         if (aux != nullptr) {
-            cout << "Node already exists" << endl;
-            return;
+            bit.push_back(newNode->getData());
+            val =bit.size();
+            for (int i=0; i<val;i++) {
+                if (bit[i].getIP() == newNode->getData().getIP()) {
+                    counter++;
+                }
+            }
+            cout << "IP: " << newNode->getData().getIP() << " has been repeated " << counter << " times" << endl;
         } else {
             if (previous->getData() < newNode->getData()) {
                 previous->setRight(newNode);

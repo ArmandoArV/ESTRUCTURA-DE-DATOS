@@ -9,6 +9,7 @@
 #include "Binnacle.h"
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 
@@ -26,7 +27,7 @@ public:
     void setRoot(NodePtr *root);
     void setSize(int size);
     // Methods
-    void insertInOrder(Binnacle);
+    void insertInOrder(Binnacle, vector<Binnacle> &);
     void preOrder(NodePtr*);
     void posOrder(NodePtr*);
     void deleteNode(Binnacle);
