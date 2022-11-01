@@ -3,7 +3,7 @@ Armando Arredondo Valle
     Date: 19/09/2022
 */
 
-#include "node.h"
+#include "Node.h"
 #include "Binnacle.h"
 #include <iostream>
 using namespace std;

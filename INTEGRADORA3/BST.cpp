@@ -121,7 +121,7 @@ void BST::deleteNode(Binnacle bitacora) {
     }
 }
 
-void BST::preOrder(NodePtr *aux) {
+void BST::preOrder(NodePtr *aux) { // Complejidad O(n)
     if (aux != nullptr) {
         cout << aux->getData() << endl; // Aqui
         preOrder(aux->getLeft());
@@ -137,7 +137,7 @@ void BST::posOrder(NodePtr *aux) {
     }
 }
 
-void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) {
+void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) { // Complexity: O(n)
     if (aux == root)
         root = nullptr;
     else {
@@ -169,7 +169,7 @@ void BST::searchLeaf(Binnacle bitacora) {
     }
 }
 */
-void BST::deleteOneChild(NodePtr *aux, NodePtr *previous) {
+void BST::deleteOneChild(NodePtr *aux, NodePtr *previous) { // Complexity: O(1)
     cout << "Delete node with a child\n";
     if (aux == root) {
         if (aux->getRight() != nullptr)
@@ -191,7 +191,7 @@ void BST::deleteOneChild(NodePtr *aux, NodePtr *previous) {
     }
     delete aux;
 }
-void deleteTwoChild(NodePtr *aux, NodePtr *previous){
+void deleteTwoChild(NodePtr *aux, NodePtr *previous){ // Complexity: O(n)
     cout << "Delete node with two children\n";
     NodePtr *aux2 = aux->getRight();
     while (aux2->getLeft() != nullptr)
