@@ -54,7 +54,10 @@ void BST::insertInOrder(Binnacle bitacora,vector<Binnacle> &bit) {
                     counter++;
                 }
             }
-            cout << "IP: " << newNode->getData().getIP() << " has been repeated " << counter << " times" << endl;
+            cout << "==============================\n";
+            cout << "ABB | IP: " << newNode->getData().getIP() << " has been repeated " << counter << " times\n";
+            cout << "==============================\n";
+            cout << " \n";
         } else {
             if (previous->getData() < newNode->getData()) {
                 previous->setRight(newNode);

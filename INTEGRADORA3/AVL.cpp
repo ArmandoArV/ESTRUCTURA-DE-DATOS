@@ -4,6 +4,7 @@
 
 #include "AVL.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 AVL::AVL() {
@@ -108,8 +109,12 @@ NodoAVL* AVL::insertaAVL(NodoAVL*nodo, Binnacle dato, bool& altura){
         }
     }
     else{
-        cout << "Dato Repetido, " << dato << "\n";
         repeated++;
+        cout << "======================\n";
+        cout << "AVL | Repeated node: " << dato << " times: " << repeated << endl;
+        cout << "======================\n";
+        cout << " \n";
+        altura = false;
     }
     return nodo;
 }
