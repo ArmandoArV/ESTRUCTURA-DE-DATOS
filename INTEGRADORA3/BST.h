@@ -27,7 +27,7 @@ public:
     void setRoot(NodePtr *root);
     void setSize(int size);
     // Methods
-    void insertInOrder(Binnacle, vector<Binnacle> &);
+    void insertInOrder(Binnacle);
     void preOrder(NodePtr*);
     void posOrder(NodePtr*);
     void deleteNode(Binnacle);

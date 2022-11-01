@@ -31,7 +31,7 @@ void BST::setSize(int size) { BST::size = size; }
 // Methods
 
 
-void BST::insertInOrder(Binnacle bitacora,vector<Binnacle> &bit) {
+void BST::insertInOrder(Binnacle bitacora) {
     int counter = 0,val;
     NodePtr *newNode = new NodePtr(bitacora);
     if (root == nullptr) {
@@ -177,8 +177,8 @@ void BST::deleteOneChild(NodePtr *aux, NodePtr *previous) {
         else
             root = aux->getLeft();
     } else {
-        if (aux->getRight() != nullptr)          // el que borro tiene hijo derecho
-            if (previous->getRight() == aux)       // es hijo derecho
+        if (aux->getRight() != nullptr)
+            if (previous->getRight() == aux)
                 previous->setRight(aux->getRight()); // sustituyo por su hijo derecho
             else
                 previous->setLeft(aux->getRight());
