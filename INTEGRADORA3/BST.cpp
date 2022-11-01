@@ -121,7 +121,7 @@ void BST::deleteNode(Binnacle bitacora) {
     }
 }
 
-void BST::preOrder(NodePtr *aux) { // Complejidad O(n)
+void BST::preOrder(NodePtr *aux) { // Complexity O(log n)
     if (aux != nullptr) {
         cout << aux->getData() << endl; // Aqui
         preOrder(aux->getLeft());
@@ -129,7 +129,7 @@ void BST::preOrder(NodePtr *aux) { // Complejidad O(n)
     }
 }
 
-void BST::posOrder(NodePtr *aux) {
+void BST::posOrder(NodePtr *aux) { // Complexity O(log n)
     if (aux != nullptr) {
         posOrder(aux->getLeft());
         posOrder(aux->getRight());

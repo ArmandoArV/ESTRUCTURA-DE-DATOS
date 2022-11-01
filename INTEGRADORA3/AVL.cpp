@@ -23,14 +23,14 @@ void AVL::setRaiz(NodoAVL*r) {this->raiz = r;}
 void AVL::setRepeated(int r) {this->repeated = r;}
 
 // Methods
-void AVL::alturarraTodo(NodoAVL *aux)	{
+void AVL::alturarraTodo(NodoAVL *aux)	{ // Complejidad O(n)
     if(aux!= nullptr){
         alturarraTodo(aux->getIzq());
         alturarraTodo(aux->getDer());
         delete aux;
     }
 }
-NodoAVL* AVL::insertaAVL(NodoAVL*nodo, Binnacle dato, bool& altura){
+NodoAVL* AVL::insertaAVL(NodoAVL*nodo, Binnacle dato, bool& altura){ // Complejidad O(log n)
     NodoAVL*nodo1, *nodo2;
     if(nodo == nullptr){
         nodo = new NodoAVL(dato);
@@ -126,7 +126,7 @@ NodoAVL* AVL::insertaAVL(NodoAVL*nodo, Binnacle dato, bool& altura){
 }
 
 
-void AVL::preorden(NodoAVL*aux)
+void AVL::preorden(NodoAVL*aux) // Complexity O(log n)
 {
     if(aux!= nullptr){
         Binnacle i = aux->getDato();
@@ -137,7 +137,7 @@ void AVL::preorden(NodoAVL*aux)
 }
 
 
-void AVL::inorden(NodoAVL*aux){
+void AVL::inorden(NodoAVL*aux){// Complexity O(log n)
     if(aux!= nullptr){
         Binnacle i = aux->getDato();
         inorden(aux->getIzq());
