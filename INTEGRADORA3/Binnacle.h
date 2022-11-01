@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class Binnacle : public error_code {
+class Binnacle{
 private:
     string IP,port;
 public:

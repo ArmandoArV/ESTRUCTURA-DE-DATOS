@@ -34,6 +34,7 @@ public:
     void deleteLeaf(NodePtr*, NodePtr*);
     void deleteOneChild(NodePtr*, NodePtr*);
     void deleteTwoChild(NodePtr*, NodePtr*);
+    void searchLeaf(Binnacle);
 };
 
 

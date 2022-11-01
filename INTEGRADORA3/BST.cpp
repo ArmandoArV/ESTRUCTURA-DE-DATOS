@@ -148,7 +148,27 @@ void BST::deleteLeaf(NodePtr *aux, NodePtr *previous) {
         delete aux;
     }
 }
-
+/*
+void BST::searchLeaf(Binnacle bitacora) {
+    if (root == nullptr)
+        cout << "\nEmpty tree, it can't be erased\n";
+    else{
+        NodePtr *aux = root, *before = root;
+        while (aux != nullptr &&  aux ->getData() != bitacora) {
+            before = aux;
+            if (aux->getData() < bitacora)
+                aux = aux->getRight();
+            else
+                aux = aux ->getLeft();
+        }
+        if (aux == nullptr)
+            cout<<"\nThe data is not in the tree\n";
+        else{
+            cout << "\nThe word " << bitacora << " is in the dictionary\n";
+        }
+    }
+}
+*/
 void BST::deleteOneChild(NodePtr *aux, NodePtr *previous) {
     cout << "Delete node with a child\n";
     if (aux == root) {

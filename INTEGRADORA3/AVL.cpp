@@ -23,7 +23,13 @@ void AVL::setRaiz(NodoAVL*r) {this->raiz = r;}
 void AVL::setRepeated(int r) {this->repeated = r;}
 
 // Methods
-
+void AVL::alturarraTodo(NodoAVL *aux)	{
+    if(aux!= nullptr){
+        alturarraTodo(aux->getIzq());
+        alturarraTodo(aux->getDer());
+        delete aux;
+    }
+}
 NodoAVL* AVL::insertaAVL(NodoAVL*nodo, Binnacle dato, bool& altura){
     NodoAVL*nodo1, *nodo2;
     if(nodo == nullptr){
