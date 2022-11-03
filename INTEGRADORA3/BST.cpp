@@ -47,13 +47,7 @@ void BST::insertInOrder(Binnacle bitacora) {
             }
         }
         if (aux != nullptr) {
-            bit.push_back(newNode->getData());
-            val =bit.size();
-            for (int i=0; i<val;i++) {
-                if (bit[i].getIP() == newNode->getData().getIP()) {
-                    counter++;
-                }
-            }
+            counter++;
             cout << "==============================\n";
             cout << "ABB | IP: " << newNode->getData().getIP() << " has been repeated " << counter << " times\n";
             cout << "==============================\n";
