@@ -1,51 +1,28 @@
 /*
  Created by Armando on 14/11/2022.
 */
-#include "Vertex.h"
-#include <vector>
+
+#ifndef INTEGRADORA_GRAFOS_GRAPH_H
+#define INTEGRADORA_GRAFOS_GRAPH_H
+#include "Binnacle.h"
 #include <iostream>
-#include <queue>
-#include <string>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-#pragma once
+
 class Graph {
 private:
-    vector<Vertex*> vertices;
-    vector<bool> visited;
-    int numberOfVertices;
-    int maxNumberOfVertices;
-    vector<vector<int>> edges;
+    map<Binnacle,bool>visited;
+    map<int, list<Binnacle>>adjacencyList;
 public:
-
-    Graph(int maxNumberOfVertices);
+    Graph();
     ~Graph();
-
-    void addVertex(Vertex* vertex);
-    void addVertex(string id);
-    void addVertex(int id);
-    void addEdge(int from, int to, int weight);
-    void addEdge(int from, int to);
-    void addEdge(string from, string to, int weight);
-    void addEdge(string from, string to);
-    int weightOfEdge(int from, int to);
-    int weightOfEdge(string from, string to);
-    int indexOfVertex(Vertex* vertex);
-    int indexOfVertex(string id);
-    int indexOfVertex(int id);
-    void clear_visited();
-    void markAsVisited(Vertex* vertex);
-    bool isVisited(Vertex* vertex);
-    Vertex* getUnvisitedVertex();
-    vector<Vertex*> getEdgesOfVertex(string id);
-    void DFS(Vertex* vertex);
-    void BFS(Vertex* vertex);
-    void DFS(string id);
-    void BFS(string id);
-
-    vector<pair<string, int>> getNodesAndDegrees();
-
-    bool isEmpty();
-    bool isFull();
+    void loadGraph(int,const Binnacle&);
+    vector<int>transformToVector();
+    vector<pair<int,int>> topologicalSort();
+    void printGraph(int);
 };
+
+
+#endif //INTEGRADORA_GRAFOS_GRAPH_H
