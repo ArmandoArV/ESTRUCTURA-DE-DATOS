@@ -1,9 +1,13 @@
+/*
+    Made by Armando Arredondo Valle | a01424709 | 14/11/2022
+ */
 #include <iostream>
 #include <string>
 #include <bits/stdc++.h>
 #include "Date.h"
 #include "Binnacle.h"
 #include "Graph.h"
+
 
 using namespace std;
 
@@ -19,7 +23,7 @@ void standardDeviation(vector<float>);
 Graph graph;
 
 //string test = "C:\\Users\\arman\\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\\CLASE ESTRUCTURA DE DATOS\\Integradora-Grafos\\cmake-build-debug\\bit.txt";
-string original = "C:\\Users\\arman\\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\\CLASE ESTRUCTURA DE DATOS\\Integradora-Grafos\\cmake-build-debug\\bitacora.txt"; // CAMBIAR AQUI EL PATH DEL ARCHIVO ORIGINAL
+string original = "C:\\Users\\arman\\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\\CLASE ESTRUCTURA DE DATOS\\Integradora-Grafos\\bitacora.txt"; // CAMBIAR AQUI EL PATH DEL ARCHIVO ORIGINAL
 int main() {
     int counter = 0;
     int mag;
@@ -71,8 +75,6 @@ int main() {
             port = IP.substr(IP.find(":")+1);
             IP = IP.substr(0,IP.find(":"));
             Binnacle binnacle(date, IP, port, action);
-            // here will insert the binnacle in the linked list
-            //binnacleList.appendInOrder(binnacle);
             graph.loadGraph(stoi(port),binnacle);
         } while (!file.fail());
     }else{

@@ -1,0 +1,3 @@
+C:/Users/arman/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/CLASE ESTRUCTURA DE DATOS/Integradora-Carrito/cmake-build-debug/CMakeFiles/Integradora_Carrito.dir
+C:/Users/arman/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/CLASE ESTRUCTURA DE DATOS/Integradora-Carrito/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/arman/OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey/CLASE ESTRUCTURA DE DATOS/Integradora-Carrito/cmake-build-debug/CMakeFiles/rebuild_cache.dir
