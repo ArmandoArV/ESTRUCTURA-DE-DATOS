@@ -9,24 +9,22 @@
 #include <algorithm>
 using namespace std;
 
-class Product {
+typedef float price_t;
+
+struct Product {
 private:
     string name;
-    float priceProduct;
+    price_t price;
 public:
     Product();
-    Product(string name, float priceProduct);
+    Product(string name, price_t price);
     ~Product();
-    string getName();
-    float getPrice();
-    void setName(string);
-    void setPriceProduct(float);
     bool operator== (Product);
     bool operator!= (Product);
     bool operator== (string);
     bool operator!= (string);
-    friend ostream& operator<< (ostream& output, Product productPrint){
-        output << "\n-Product-\n\tName: "<< productPrint.getName() << "\n\tPrice: $" << productPrint.getPrice() << endl;
+    friend ostream& operator<< (ostream& output, Product product2){
+        output << "\n-Product-\n\tName: "<< product2.name << "\n\tPrice: $" << product2.price << endl;
         return output;
     }
 };

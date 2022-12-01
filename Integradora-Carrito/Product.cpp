@@ -3,52 +3,69 @@
 */
 
 #include "Product.h"
+#include <cctype>
 Product::Product() {
     name = "No name";
-    priceProduct = 0;
+    price = 0;
 }
 
-Product::Product(string name, float priceProduct) {
-    this->name = name;
-    this->priceProduct = priceProduct;
+Product::Product(string name_, float price_) {
+    this->name = name_;
+    this->price = price_;
 }
 
 Product::~Product() {}
 
-string Product::getName() {return name;}
-
-float Product::getPrice() {return priceProduct;}
-
-void Product::setName(string name) {this->name = name;}
-
-void Product::setPriceProduct(float priceProduct) {this->priceProduct = priceProduct;}
-
 bool Product::operator==(Product product) {
-    string nameCompare = name;
-    string namePCompare = product.getName();
-    transform(nameCompare.begin(), nameCompare.end(),nameCompare.begin(), ::toupper);
-    transform(namePCompare.begin(), namePCompare.end(),namePCompare.begin(), ::toupper);
-    return nameCompare == namePCompare;
+    string name1 = product.name;
+    string compare1 = "";
+    for (int i = 0; i<name1.size(); ++i) {
+        compare1 += tolower(name1[i]);
+    }
+
+    string name2 = name;
+    string compare2 = "";
+    for (int i = 0; i<name2.size(); ++i) {
+        compare2 += tolower(name2[i]);
+    }
+    return compare1 == compare2;
 }
 
 bool Product::operator!= (Product product){
-    string nameCompare = name;
-    string namePCompare = product.getName();
-    transform(nameCompare.begin(), nameCompare.end(),nameCompare.begin(), ::toupper);
-    transform(namePCompare.begin(), namePCompare.end(),namePCompare.begin(), ::toupper);
-    return nameCompare != namePCompare;
+    string name1 = product.name;
+    string compare1 = "";
+    for (int i = 0; i<name1.size(); ++i) {
+        compare1 += tolower(name1[i]);
+    }
+
+    string name2 = name;
+    string compare2 = "";
+    for (int i = 0; i<name2.size(); ++i) {
+        compare2 += tolower(name2[i]);
+    }
+    return compare1 != compare2;
 }
 
-bool Product::operator==(string name) {
-    string nameCompare = this->name;
-    transform(nameCompare.begin(), nameCompare.end(),nameCompare.begin(), ::toupper);
-    transform(name.begin(), name.end(),name.begin(), ::toupper);
-    return nameCompare == name;
+bool Product::operator==(string name2) {
+    string compare1 = "";
+    for (int i = 0; i<name2.size(); ++i) {
+        compare1 += tolower(name2[i]);
+    }
+    string compare2 = "";
+    for (int i = 0; i<name.size(); ++i) {
+        compare2 += tolower(name[i]);
+    }
+    return compare1 == compare2;
 }
 
-bool Product::operator!=(string name) {
-    string nameCompare = this->name;
-    transform(nameCompare.begin(), nameCompare.end(),nameCompare.begin(), ::toupper);
-    transform(name.begin(), name.end(),name.begin(), ::toupper);
-    return nameCompare != name;
+bool Product::operator!=(string name2) {
+    string compare1 = "";
+    for (int i = 0; i<name2.size(); ++i) {
+        compare1 += tolower(name2[i]);
+    }
+    string compare2 = "";
+    for (int i = 0; i<name.size(); ++i) {
+        compare2 += tolower(name[i]);
+    }
+    return compare1 == compare2;
 }
