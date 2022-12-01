@@ -16,6 +16,7 @@ private:
 public:
     Product();
     Product(string name, float priceProduct);
+    ~Product();
     string getName();
     float getPrice();
     void setName(string);
@@ -24,7 +25,6 @@ public:
     bool operator!= (Product);
     bool operator== (string);
     bool operator!= (string);
-
     friend ostream& operator<< (ostream& output, Product productPrint){
         output << "\n-Product-\n\tName: "<< productPrint.getName() << "\n\tPrice: $" << productPrint.getPrice() << endl;
         return output;

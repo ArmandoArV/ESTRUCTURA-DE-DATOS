@@ -9,11 +9,17 @@
 #include <vector>
 
 class Products {
-private:
-    vector <Product*> AvailableProducts;
-    int N = 20;
-public:
-
+    private:
+        vector <Product*> AvailableProducts;
+        int N = 20;
+    public:
+    Products();
+    Products(string);
+    ~Products();
+    void initializeProducts(string);
+    int size();
+    int findProduct(string);
+    Product* operator[] (int);
 };
 
 
